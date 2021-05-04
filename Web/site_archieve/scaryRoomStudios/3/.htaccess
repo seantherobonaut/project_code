@@ -1,0 +1,6 @@
+#This file must be present in the website's root directory.
+
+ErrorDocument 404 /uuwat/Base/404/404.php
+RewriteEngine On
+RewriteRule    ^test/?$    test.php    [NC]
+RewriteRule    ^([A-Za-z0-9-]+)/?$    index.php/?page=$1    [QSA,NC,L]

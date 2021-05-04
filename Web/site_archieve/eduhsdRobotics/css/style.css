@@ -1,0 +1,188 @@
+@import url("../css/jsmenu.css");
+
+
+/*  ALL PAGES  */
+  body
+  {
+  background-color:#666666;
+  background-image:url(../images/background.png);
+  background-repeat:repeat;
+  background-position:top center;
+  background-attachment:fixed;
+  }
+  
+  #wrapper
+  {
+  width:950px;
+  margin:50px auto 10px auto;
+  padding:5px;
+  border:1px solid #ccc;
+  background-image:url(../images/filler.png);
+  -moz-border-radius:20px;
+  -o-border-radius:20px;
+  -webkit-border-radius:20px;
+  border-radius:20px;
+  }
+  
+  .banner
+  {
+  width:600px;
+  }
+  
+  .bannerlink img
+  {
+  border:none;
+  }
+  
+  .text
+  {
+  font-family:arial;
+  width:840px;
+  margin:auto;
+  }
+  
+  .para:first-letter {
+	margin-left:35px;
+	}
+
+/*  SPECIFIC PAGES */
+
+
+/*  INDEX PAGE  */
+
+	index {
+	margin-left: 200px;		
+		}
+		
+	
+
+
+
+
+/*  SPONSORS.HTML */
+  .sponsors
+  {
+  font-size:120%;
+  color:#222;
+  text-align:center;
+  }
+
+
+/*   NEWS.HTML  */
+  .newspics img
+  {
+  border:none;
+  }
+
+
+/*  TEAM.HTML  */
+  .schools img  {
+  border:none;
+  }
+
+  .teamlinks{
+	  color:#006;text-decoration:none;
+	 }
+	  
+  .teamlinks:hover{
+	  text-decoration:underline;color:black;
+	 }
+
+
+/*  CONTACTS.HTML  */
+  .contact {
+  font-size:120%;
+  margin-left:150px;
+  }
+
+
+/*  FOOTER AREA  */
+  .copyright {
+  font-family:arial;
+  font-size:12px;
+  color:#151515;
+  text-align:center;
+  margin-bottom:40px;
+  }
+  
+  
+/*  CONTACTS.HTML  */
+  .dinkyText {
+	padding-left:10px;
+	font-size:12px;
+	line-height:95%;
+	}
+	  
+  .subtitle {
+	font-size:18px;
+	font-weight:bold;
+	}
+	  
+	tr.spaceUnder > td  {
+	  padding-bottom:5px;
+	}
+	  
+	  
+/*  MISSION  & RULES  */  
+	.rules {
+	color:black;
+	font-size:18px;
+	}
+	  
+	
+		
+   
+
+/* VIDEOS.HTML  */
+
+  p.indent
+	  {
+		  text-align:left;
+		  text-indent:75px;
+		  font-size:20px;
+	  }
+	  
+/*  =============???????==================  */
+
+.shadow {
+	-moz-box-shadow: 3px 3px 4px #000;
+	-webkit-box-shadow: 3px 3px 4px #000;
+	box-shadow: 3px 3px 4px #000;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+}
+
+.seasonlist {
+	list-style-type: square;
+	font-family: Arial, Helvetica, sans-serif;	
+	
+}
+
+	  
+	  
+	  
+	  
+	  .paytable
+{
+margin:auto;
+width:800px;
+border-collapse:collapse;
+}
+
+.paytable td,th
+{
+border:2px ridge #060;
+padding:5px;
+text-align:center;
+}
+
+.game:first-letter{margin-left:35px;}.quote {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 14px;
+	font-style: italic;
+	font-weight: bold;
+	color: #666;
+	width: 650px;
+}

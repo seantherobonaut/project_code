@@ -1,0 +1,32 @@
+/* reset.css - reset the default browser styling
+ *
+ * Type: transitional
+ *
+ * (cc) 2006-2008 Tom Lwis (www.lwis.net). Some Rights Reserved.                         
+ * This style sheet is licensed under a Creative Commons License
+ * http://www.creativecommons.org/licenses/by-nc-sa/3.0/
+ */
+
+:link,:visited,:focus
+{ text-decoration:none; outline:none; }
+
+ul,ol
+{ list-style:none }
+
+h1,h2,h3,h4,h5,h6,pre,code,kbd,input,select,textarea,table
+{ font-size: 1em; }
+
+dl,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,div,p,blockquote,fieldset,legend,input,select,textarea
+{ margin:0; padding:0 }
+
+a img,:link img,:visited img,abbr,acronym,fieldset,iframe
+{ border:0; }
+
+address,abbr,cite
+{ font-style:normal }
+
+caption
+{ text-align:left; }
+
+q:before,q:after
+{ content:''; }

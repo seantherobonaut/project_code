@@ -1,0 +1,13 @@
+
+Change passwords
+	User clicks on forgot password
+	Ask for email
+	If email exists, send a forgot password link to email (link: url + route + code)
+		otherwise tell them the account does not exists
+	User clicks on link.
+	Website path accepts link
+		does email exist? 
+		using find matching code
+		if auth code is not too old
+			ask user to enter new password twice, then if they match, update the password
+		if it is too old, tell them the link is old, if the user even exists, or the link is expired	

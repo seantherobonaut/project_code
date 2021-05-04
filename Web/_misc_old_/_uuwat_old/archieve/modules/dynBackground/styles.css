@@ -1,0 +1,15 @@
+#dynBg
+{
+	position: fixed;
+	z-index: -1;
+	top:0px;
+	left:0px;
+	right:0px;
+	height:100%;
+	/*border:4px solid blue;*/
+}
+
+#dynBg > .imgFull
+{
+	/*Stuff*/
+}

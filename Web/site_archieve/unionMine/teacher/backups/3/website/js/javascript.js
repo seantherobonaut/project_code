@@ -1,0 +1,1 @@
+$("#fittext_text").fitText(1.1, { minFontSize: 10, maxFontSize: '15px' });

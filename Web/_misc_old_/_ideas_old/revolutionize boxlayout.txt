@@ -1,0 +1,17 @@
+					<div class="dynBox func:stack">
+						<span>cell1</span>
+						<span>cell2</span>
+						<span>cell3</span>
+					</div>
+<!-- 					test call function.function();
+
+					func() get total children widths and current width...if whitespace < 2 (they can be 1 pixel on some)...execute break
+					for dynBox get func:funcname ...obtain class as a string and for each class append to an array only if that 
+						classname contains the string "func:" if it does, trim that and add to the array...or just execte...only
+						one function per dynbox
+
+					horizontal to vertical - disable vertical align for only immediate child elements
+					(one row becomes one column)...children with width:100% and max-width:200px still shrink when stacked as column?
+
+					grid system
+					stack how ever man fit in one row and decide how many columns from that -->

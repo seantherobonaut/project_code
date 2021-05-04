@@ -1,0 +1,226 @@
+Your paper notes on the template Algorithm are in your closet's small chest of drawers on the top one
+
+Since you have decided to keep tempaltes on objectIDnames you can count how many instances of it
+	are on a specific level. It can never be its own child. It can only exist somewhere else side by side.
+		Use file tree search. Searhc if it has a duplicate in a file tree....depending on condition oops
+			How would you check if get:page = about in a NO DUPLICATION search??? SHit...
+
+Your template idea is like object oriented programming before it was called that. Datastructures with pointers with functions in a table.
+Your datastructure is the json_string that is in a database that is an instance pointer to a template(class) file.
+
+loadpointers
+loadTemplateObj loadCondition, loadContent
+
+array() = dataTable 554, 23, 88, 90 //goes to datatable and gets the data for table.row.column
+<div>
+	loadContent(array(1..2..or3)) prints out array in order
+</div>
+
+//on page, check if more than once instance of TemplateObjectID...make sure there isn't
+TemplateObject holds json_string that contains PUSHcss/js files, contentIDs, pointerArray(1=TemplateObje3, 2=TemplateObject6,etc...) //...actually set how each pointer behaves contentLoader, or tempaltePointer, conditionLoader
+
+ObjectID, json_string(what css/js files to load or put inline, what loaders do[what template, what content, what conditions])
+
+all classes must have a default values array filled with null values so array_replace can be used to merge/overwrite them
+
+ParentTemplateTable
+id childObjIDname
+
+methods
+	conditionalLoaders
+	templateObjectLoaders
+	contentLoaders
+
+
+templateObjId must be an object property for other objects like dynBG loader to use along with user_data or something
+
+
+
+for dataIO
+
+all templates will have a custom form that will appear or vanish based on what it checks for permissions/conditions are needed or who is logged in
+	the benefits to this are many. Based on what values are passed to the object, the form can behave in differnet ways
+		have an "edit" button...maybe jus when the object is pressed, have it glowing or something
+ They will use the string templateObjId in the html.
+When submit is pressed..serverside the hidden value of template
+
+use polymorphism so when specific conditions are met, javascript reveals hidden input forms. Have a common interface...or rather than refresh the whole
+page, refresh just the triggers on the page
+
+_________________________________________________
+
+Static Template file
+	TemplateFileOBject (id, behavior)
+		data
+
+(class)
+	object
+		data
+
+Template
+	setup
+		input
+
+You should be able to reuse objects with different data sets
+
+!!!!!!!!!!!!!!!!!!!!!!!https://en.wikipedia.org/wiki/Search_tree
+______OLD TEMPLATE IDEAS_____________
+
+Maybe everything can be objects....the objects just will require an html file that has encapsulated values...requiring html in a file will it still print?
+
+have each template be a named object under a list
+
+Div_Template
+id(number) data(css, settings, other)
+
+have seperate thing to grab conditions and send them to the loader as an array of set values
+you can check if variables are set from strings like this
+	$charlie = "chocolate";
+	$checkVal = "charle";
+	if(isset($$checkVal))
+		echo "yes!";
+	else
+		echo "no!";
+
+
+loader(conditionarray) send that array to sql database
+	tempaltes single or conditional? ...a templateObject changes when you say "add condition" instead of direct loading
+
+
+BREAKING!!!
+All templates are objects that require html files inside them to keep the scope encapsulated!
+
+unique content table
+id, table/row/column
+
+//make headers static, im only calling it once
+//getting templates must be done in functions to keep their variables out of scope...encapsulate...loadtempalte() must have require inside it
+		declare stuff and dataobjects to variables
+		include html
+			and execute and extract data
+			get contentID from provided (table/row/cell) or null if it doesn't exist
+
+	all templates have template pointers that pass the current template name(basename __FILE__(must be unique)), and pointer id local to that template
+		newsfeed:15 -> newsFeed.php:pointer#15
+
+		Job of template is to be static and hold pointers...remember templates do not hold ANY database data...only structure, pointers, and object calls
+		Templates will always be linked(required) directly unless other conditions are not met...get conditions from pointer
+			directly referenced but might or might not load
+		Job of objects and functions is to return different html based on input. The user cannot modify the structure of these objects
+		Every template must have the same name as its folder or it is considered "not found"
+
+		Tempaltes are for large changes and loading, objects are for small specialization like depending on what session variable change page background
+	The inputs for the object will be method calls on the template page that will appear as checkboxes for the user kind of like on Unity. You can
+	pass exact values or dynamic ones. For dynBg->setImage() you can set an exact path or pass an argument like page="something" and it will
+	query the database and return that data foryou. 
+
+		While I did say you can't directly change the html structure of objects, you could pass other objects to them with a common interface
+		to dictate what and how they output something.
+[OLD]
+modify template loader so only will return a template if all array elements match the set and required table fields (minus the id and stuff)
+TemplateManager:
+Make tempalte manager, select table, modify values...if table does not exist say so...template_TableRegister not provided, must be provided by APP
+	select the table(print it out)...maybe database to? , modify fileds with ajax, or if table does not exist, say so
+
+Build it:
+
+	How will templates be built?
+	coreFile:
+		get previous templatename,pointerID 
+		decalre objects and dataobjects(construct sql calls for basic $text, $image, $etc...), push header files css/js
+		include htmlFile
+
+	htmlFile:
+		html stuff
+		dataObject->runQuery(data)[gets the row] --> fetchdata("columnid")[gets the column of the row]
+		print the fetchdata along with get_id_from_table/row/column name....maybe all contentDataObjects will have the html printout of contentID names since
+			they also print out html tags
+
+
+Step1)	make masic template builder and UI to make basic changes
+Step2)	test loading different tempaltes
+Step3)	test with objects
+Step4)	make modules in the modules folder of textItem or dynBackground and stuff
+
+later, ability to rename template files, make templates, objects appear as boxes with checks
+
+
+
+
+_______SUPER OLD TEMPLATE IDEAS___________
+
+
+Template idea
+Template database table only has templateId, name, filepath
+When pages create new template tables they will "extend" that baseTable and use conditions $tableId, $_GET["page"], $_SESSION["user_id"]...etc
+each tempalte will have a template loader that can join different tables
+
+
+Newest template idea
+	each template corresonds to a param:value like page:aboutme = template:content page:home = template:newsfeed
+				user:sean = template:profile
+
+				include getTemplate(param, value); ..returns template file
+
+
+
+
+New tempalte idea. Have gui create php files since only person at a time should be modifying layout.
+Page=something paramaters either show or hide or modify elemetns on the page but don't change layout
+This allows me to still code templates, and allow someone to create new ones through gui no need for database shit
+
+the idea of a global layout and page by page layouts
+
+if the global layout doesn't just have one content box that calls sub templtes..
+	then you will have to assemble sections serverside to fill them
+
+	__
+
+		tempate server file
+		put sererobject data into desired to htmlformats
+		put htmlsnippets into sections based on the global layout format
+
+		namedtemplate.php will contain only html and these snipets...so there is the global template, page templates and subtemplates for formatting
+	__
+
+...based on the file interaction rather than database idea...because we are manipulating layout not data, databases are for data not layout
+
+each template has a server file, and it doesn't matter what order the objects are written to the php file in
+each contentIO object will have a separete file or files for putting their data into html format (htmlsnippet...minitemplate?)
+
+at the end of serverside, the content will be divided up into large groups depending on how many holes there are to fill in the global
+	template.
+
+when the clientside htmltemplate is called it will contain variables that serverside has setup
+
+
+
+
+
+
+For template stuff
+Each page will only have one page=, all other parameters do stuff on the page...templates don't need to worry about
+Data items
+	1
+	2
+	3
+	4
+	Will have parents. The root htmlsnippet will have no parent, that is where the list starts
+	Let's say in the database for page=about
+
+	htmlsnippets stored in their own table
+	larger snippets can be made from smaller snippets
+
+	id, snippet, parent, headers(id,classes,)
+
+	id:1 htmlroot parent:none
+	id:2 newdiv parent:1
+	id:3 newlogin parent:2
+	id:4 newgreetingparagraph parent:2
+	id:5 newdiv parent:1
+
+	for this to html...
+	divSnippet(inside)
+	arrray1 div
+	array2 inside
+	array3 /div		

@@ -1,0 +1,99 @@
+
+# HTID:6904958: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:6904958:
+
+
+#[NC] means not case sensitive
+
+#The only difference between blocking a single referrer and multiple referrers is the modified [NC, OR] flag in the multiple referrers example, this should be added to every domain except the last.
+
+#You might have noticed the line "Options +FollowSymlinks" above, which is commented with a '#'. Uncomment this line if your server returns a '500 Internal Server' error. This means your server isn't configured with FollowSymLinks in the '' section of the 'httpd.conf'. Contact your system administrator for advice with this issue.
+
+
+
+make an errorPages folder what holds error 401, 404, 500, etc...
+
+//no angry man
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?yourdomain.com/.*$ [NC]
+RewriteRule \.(gif|jpg|css)$ - [F]
+
+//angry man
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?yourdomain.com/.*$ [NC]
+RewriteRule \.(gif|jpg)$ http://www.yourdomain.com/hotlink.jpg [R,L]
+
+This tells all websites other than yours they cannot directly reference your data, you can optionally display an angry man or something
+
+DirectoryIndex index.html // this allows you to have a default file that overrides the server
+
+IndexIgnore *.zip *.jpg *.gif //ignores files of that type, just putt * does all (Options +Indexes .. this allows indexes)
+
+Set your timezone (SetEnv TZ America/Los_Angeles)
+
+
+Server signatures: 
+ServerSignature EMail
+SetEnv SERVER_ADMIN nospace@pleasenospace.com
+or
+ServerSignature Off
+
+
+## Enable Mod Rewrite, this is only required once in each .htaccess file
+RewriteEngine On 
+RewriteBase / 
+## Test for access to includes directory
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /includes/ .*$ [NC] 
+## Test that file requested has php extension 
+RewriteCond %{REQUEST_FILENAME} ^.+\.php$ 
+## Forbid Access 
+RewriteRule .* - [F,NS,L]
+
+
+//
+Apache .htaccess Guide & Tutorial >>
+Preventing requests with invalid characters
+RewriteEngine On 
+RewriteBase / 
+RewriteCond %{THE_REQUEST} !^[A-Z]{3,9}\ [a-zA-Z0-9\.\+_/\-\?\=\&]+\ HTTP/ [NC] 
+RewriteRule .* - [F,NS,L] 
+
+
+<FilesMatch "^php5?\.(ini|cgi)$">
+Order Deny,Allow 
+Deny from All 
+Allow from env=REDIRECT_STATUS 
+</FilesMatch>
+
+
+
+escape characters
+RewriteRule "^search/(.*)$" "/search.php?term=$1" [B,PT]
+
+But you might need to allow encoded slashes because it might have issues
+An alternative to this flag is using a RewriteCond to capture against %{THE_REQUEST} which will capture strings in the encoded form.
+
+The [BNP] flag instructs RewriteRule to escape the space character in a backreference to %20 rather than '+'. Useful when the backreference will be used in the path component rather than the query string.
+
+
+The following rule will forbid .exe files from being downloaded from your server.
+RewriteRule "\.exe" "-" [F]
+This example uses the "-" syntax for the rewrite target, which means that the requested URI is not modified. There's no reason to rewrite to another URI, if you're going to forbid the request.
+When using [F], an [L] is implied - that is, the response is returned immediately, and no further rules are evaluated.
+
+
+How can we use the H|Handler flag?
+
+
+[NC] means case sensitive
+
+
+In the example below, any request for an image file will be proxied to your dedicated image server. The match is case-insensitive, so that .jpg and .JPG files are both acceptable, for example.
+RewriteRule "(.*\.(jpg|gif|png))$" "http://images.example.com$1" [P,NC]
+
+
+Alias "/icons" "/usr/local/apache/icons"
+RewriteRule "/pics/(.+)\.jpg$" "/icons/$1.gif" [PT]

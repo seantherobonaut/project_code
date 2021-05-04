@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<dirinfo>
+<files>
+<item key='tn_image1.png20091118090714' />
+<item key='tn_image3.png20091118090717' />
+<item key='tn_image5.png20091118090717' />
+<item key='tn_image9.png20091118090718' />
+<item key='tn_image11.png20091118090715' />
+<item key='tn_image12.png20091118090715' />
+<item key='tn_image13.png20091118090715' />
+<item key='tn_image15.png20091118090715' />
+<item key='tn_image16.png20091118090715' />
+<item key='tn_image16a.png20091118090715' />
+<item key='tn_image17.png20091118090716' />
+<item key='tn_image18.png20091118090716' />
+<item key='tn_image20.png20091118090716' />
+<item key='tn_image21.png20091118090716' />
+<item key='tn_image22.png20091118090716' />
+<item key='tn_image23.png20091118090716' />
+<item key='tn_image25.png20091118090717' />
+<item key='tn_trim019.jpg20091118090718' />
+</files>
+<stack version='1' expanded='false' framerate='29.97' onionskin='0' >
+<files>
+	<item key='tn_image3.png20091118090717' />
+	<item key='tn_image4.png20091118090717' />
+	<item key='tn_image6.png20091118090717' />
+	<item key='tn_image7.png20091118090717' />
+	<item key='tn_image8.png20091118090717' />
+	<item key='tn_image10.png20091118090715' />
+	<item key='tn_image14.png20091118090715' />
+	<item key='tn_image17a.png20091118090716' />
+	<item key='tn_image19.png20091118090716' />
+	<item key='tn_image24.png20091118090717' />
+</files>
+</stack>
+</dirinfo>

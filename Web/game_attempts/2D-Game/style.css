@@ -1,0 +1,79 @@
+html, body{margin:0px;padding:0px;}
+body {font-family: verdana, sans-serif; font-size: 16px;}
+
+div
+{
+	box-sizing: border-box;
+}
+span
+{
+	display: inline-block;
+	box-sizing: border-box;
+}
+div, span
+{
+	font-size: 0px;
+}
+
+a
+{
+	display: inline-block;
+	box-sizing: border-box;
+}
+img
+{
+	display:block;
+	box-sizing: border-box;
+}
+
+/* Style standard buttons and forms */
+form
+{
+	box-sizing: border-box;
+	font-size: 0px;
+}
+form input[type="text"]
+{
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	padding:2px 4px;
+	border:1px solid #a5a5a5;
+	background-color: white;	
+}
+button, form input[type="submit"]
+{
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	cursor: pointer;
+	padding:2px 4px;
+	border:1px solid #a5a5a5;
+	background-color: #eaeaea;
+}
+button:hover, form input[type="submit"]:hover
+{
+	background-color: #E3F0FC;
+	border-color: #7EB4EA;
+} 
+
+/*Make it move to the right slightly when clicked*/
+button:active, form input[type="submit"]:active
+{
+	padding-left:5px;
+	padding-right: 3px;
+}
+
+.gameCanvas
+{
+  border:1px solid black;
+}
+
+/* #player
+{
+  width:20px;
+  height:20px;
+  background-color: black;
+} */

@@ -1,0 +1,41 @@
+People like to scroll...
+
+Have all pages displayed on the first page and have each link just scroll down to one location
+
+each location takes a one full screen height (depending on the persons screen)
+
+clicking each link makes jquery slide effect
+
+the nav bar follows you
+
+
+upon first scrolling, the navlogo shrinks and the text floats to the right
+
+
+add option to tiled backgrounds to disable scrolling
+types of backgrounds:
+
+full, centered
+
+full stuck to left or right
+
+change scale of tiled and background position for tiled?
+
+image fixed and scale in all corners..this implies height is not 100%
+
+background on sides...both left and right are covered but image clings to middle top or middle bottom...implies height is not 100%
+
+
+
+diagnosing problems...option to show all borders
+	dialoug box for showing specific tags or classes of borders...when show all borders....make negative padding and border so nothing moves???
+
+each box you can change font size or style...have the website spit out a list of all fonts and add ability to add google fonts to font registry for website
+
+
+
+user inputs soundcloud embed
+
+backend downloads mp3 for website and inserts to html code
+
+

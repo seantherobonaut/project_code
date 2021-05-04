@@ -1,0 +1,17 @@
+idea:
+ have a table of named tamplates that correspond to ids...
+	if you a template that shares a subtemplate with a nother template hwo will the user add that
+lets say, several templates share the same template of "menu bar"
+
+when the user creates a new page, they could make a new menu bar, or select one existsin..but how?
+will they jsut say use template_id:abc or can they select from a list of names they made the correspond to temlate ids?
+
+each template/post must have its own included js file that creates a form that goes inside a common popup
+popup:common
+buttons:common newbutton(type, id)
+
+
+
+
+TODO don't allow the main template to be nested...
+remove the option to delete the template(just use Delete page instead)

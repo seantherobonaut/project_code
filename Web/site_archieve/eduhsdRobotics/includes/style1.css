@@ -1,0 +1,172 @@
+	/*body width 800px is dictated by width of header image */
+* {
+	margin: 0;
+}
+	body
+		{
+		height:100%;
+		margin: 50px 0px;
+		padding: 0px;
+		text-align: center;
+		background-color: #408080;
+		color: black;
+		font-family: Sans-Serif, Comic Sans MS, Times New Roman;
+		}
+		
+		
+* html ul.dropdown ul { background-image: url(../pictures/dropdown_pane_8bit.png); }
+* { margin: 0; padding: 0; }
+
+html, body, .wrapper {
+	min-height: 100%;
+	width:100%;
+	height: auto !important;
+	height:100%;
+	position: relative:
+	margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */
+	
+}
+
+html>body, html>body .wrapper {
+	height: auto;
+}
+
+
+	h2.greeting
+		{
+		text-align: center;
+		color: #7BAEBD;
+		
+		}
+		
+	p.left
+		{
+		text-align: left;
+		text-indent: 30px;
+		}
+		
+		/*  navigation area */
+	.centerlink
+		{
+		text-align: center;
+		font-size: 125%;
+				}
+	
+		
+		/* entire content background */
+	#wrapper
+		{ 
+		width: 800px; 
+		text-align: left;
+		margin: 0 auto;
+		margin-top: 0px;
+		background-color: #BAE1FF;
+		height: 100%;
+		} 
+		
+		/* text content area */		
+	.textContent
+		{
+		margin-top: 50px;
+		text-align: left;
+		padding-left: 10px;
+		padding-right: 10px;
+		margin-bottom:3em;
+		padding-bottom:10px;
+		
+		}
+	
+		
+div.circuitRule {
+	background-image: url(../pictures/HRCircuit.jpg);
+	 background-position: left;
+	 background-repeat: no-repeat;
+}
+
+.listIndent {
+       text-indent: 15px;
+	   list-style: none;
+}
+	
+	
+.contactForm {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #426583;
+}
+
+p.verbiage {
+padding-bottom:20px;
+	}
+
+
+	a:link {
+	color: #1928FF;
+	} 
+	
+	a:visited {
+	color: #FF0000;
+	}
+	
+	a:hover {
+	color: #FF00FF;
+	} 
+	
+	a:active {
+	color: #0000FF;
+	} 
+
+*NewsCenter {
+	background-color: #FFFFFF;
+	padding-left:5px;
+}
+
+.contentTitle {
+	font-size: 16px;
+	font-weight: bold;
+	color: #3a6d6d;
+	text-align: center
+}
+
+
+	a:link {
+	color: #1928FF;
+	} 
+	
+	a:visited {
+	color: #FF0000;
+	}
+	
+	a:hover {
+	color: #FF00FF;
+	} 
+	
+	a:active {
+	color: #0000FF;
+	} 
+	
+	#footer  {
+	position: relative;
+	height: 50px;
+	width:800px;
+	border-top:1px dotted #ffffff;
+	background-color: #7BAFBD;
+	color:#fff;
+	font-size:70%;
+	text-align:center
+		}
+	
+#footer p {
+	margin:0.5em 0 1em 2em;
+	padding:0;
+}
+
+.footer, .push {
+	height: 50px; /* .push must be the same height as .footer */
+}
+
+/*
+
+Sticky Footer by Ryan Fait
+http://ryanfait.com/
+
+

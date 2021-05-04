@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ticks per second test</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<style type="text/css">
+		html, body
+		{
+			margin:0px;
+			padding:0px;
+		}
+
+		#output1, #output2
+		{
+			text-align: center;
+			width:40px;
+		}
+	</style>
+</head>
+<body>
+	<div id="output1" style="border:1px dashed gray;padding:15px 0px;float:left">0</div>
+	<br style="clear:both" />
+	<div id="output2" style="border:1px dashed gray;padding:15px 0px;float:left">0</div>
+	<br style="clear:both" />
+	<button onclick="startTimer();startTimer2();">Start timer</button>
+
+	<script type="text/javascript">
+		$("#output1").after("<br/>&nbsp;&nbsp;&nbsp;ticks (20/sec)");
+		$("#output2").after("<br/>&nbsp;&nbsp;&nbsp;seconds");
+	</script>
+
+	<script type="text/javascript">
+		var ticks, timer;
+
+		function startTimer()
+		{
+			ticks = 0;
+			countTicks(); //The initial execution for no double delay
+			clearInterval(timer);
+			timer = setInterval(countTicks, 50);
+		}
+
+		//There are 
+		function countTicks()
+		{
+			if(ticks >= 40)
+			{
+				clearInterval(timer);
+				//ticks = 0;
+				$("#output1").html(ticks);
+			}
+			else
+			{
+				$("#output1").html(ticks);
+				ticks++;
+			}
+		}
+
+		var ticks2, timer2;
+
+		function startTimer2()
+		{
+			ticks2 = 0;
+			countTicks2(); //The initial execution for no double delay
+			clearInterval(timer2);
+			timer2 = setInterval(countTicks2, 1000);
+		}
+
+		//There are 
+		function countTicks2()
+		{
+			if(ticks2 >= 2)
+			{
+				clearInterval(timer2);
+				//ticks2 = 0;
+				$("#output2").html(ticks2);
+			}
+			else
+			{
+				$("#output2").html(ticks2);
+				ticks2++;
+			}
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!-- 
+
+Basic Web app plan:
+    Setup the basic look ... done (1 hour)
+    Setup a form to add new comments (30 minutes)
+        Write the form, style it near the bottom.
+    Setup a php script to handle processing and repeating of submitted responses
+        use a php session variable to hold the comments
+    (1-2 hours to fully test)
+
+    Setup database access so the comments are stored in a database (stop using session variable)
+        Create table (id, comments)
+        Copy over database access code
+        Test
+        Implement
+    (1 hour)
+
+Estimate: (4.5 hours) (3.5 left) ... possibly double estimate
+
+
+________________
+Setup error/exception handling + logging
+
+Setup full database integration
+    also no more throwing errors... if there is no databse connection log it, and do not return results
+    Optional logging with a static method on the database object
+
+Setup ajax modify/delete add comment
+________________
+
+
+    (make an estimate of time)
+    Setup a login system
+
+    Convert normal php redirect to AJAX request.
+        Refresh how to use AJAX
+        Test it
+        Implement it
+
+
+    //Polishing
+        You can't really contorl how fast data is sent to the server...well maybe copies from the same ip address.. but eh
+            Just reset the form as soon as them submit with javascript, the goal is to help prevent people accidentally making duplicates, not to stop DDOS
+
+
+
+
+New project. Plan out all desired functionality and look.
+
+Hey, gimme a few days to plan out the project so I can get you an estimate.
+
+Figure out how much each setup item will take you.
+Set aside extra time for things you are new to. You will need time to discover and to test.
+
+Get ALL basic functionality working.
+Go back and polish up.
+
+
+
+
+Get the new comment feature to work without sign in, or database access, use a session
+variable to repeat back submitted comments
+
+setup database access
+
+setup comment interaction with ajax
+
+Once that is done, setup a login system withOUT ajax first, then with ajax
+
+
+
+//check if you can override object.define property methods get,set
+/*
+
+http://cs.slides.com/colt_steele/problem-solving-patterns#/1
+https://practical-goodall-6a70b7.netlify.com/
+
+What is bigO
+
+
+
+can i restate the problem in my own words
+what are teh inputs inot the problem
+what are teh outputs that come from the solution
+can teh outputs be determined from your inputs?
+how should i label the important pieces
+
+ex, a function that takes two numbers and returns the sum
+
+
+///remember reach pieces does one specific things
+    lets say you want to modify that function to make sure those 2 numbers are only the first and last num of an array
+
+rather than modify that function, make a nother one that takes in an array and returns 2 numbers
+
+
+
+
+break problem down, can you solve it on paper without a computer?
+
+
+/////
+if you can't solve a problem down, solve a simpler one
+define what you want the result to be first
+
+
+cs.slides.com/
+
+
+
+/////
+
+study ahead of time more of what the program requires
+plan out every last thing
+
+
+
+Rex:
+encapsulation does not increase security, it helps you write better code
+safeguards for checking data should mainly only be used for user input, not in your own code
+  do not write hand rails on flat ground
+
+
+Try not to design stuff again and again
+  "Hashing and rehashing is . . . like jerking off.
+It feels good but does nothing 😛"
+
+*/
+
+
+
+
+
+
+
+
+
+ -->
+
+ <style type="text/css">
+                 #loginBox
+            {
+                border: 1px solid black;
+                width:400px;
+                float: right;
+            }
+
+            #login
+            {
+                border:1px solid white;
+                max-width: 300px;
+                margin:auto;
+                margin-top: 15%;
+                padding:10px;
+                padding-top: 0px;
+                background-color: white;
+                border-radius: 7px;
+            }
+            #login > div {margin-top: 10px;}
+            #loginPrompt .dataform input{border-radius: 5px;}
+ </style>
+
+
+                        <form id="login" class="dataform" method="post" action="">
+                            <div>
+                                <p>Username: </p>
+                                <input  style="float:right" type="text" name="user">
+                                <br style="clear:right">
+                            </div>
+                            <div>
+                                <p>Password: </p>
+                                <input style="float: right" type="password" name="pass">                                    
+                                <br style="clear:right">
+                            </div>    
+                            <div>
+                                <input style="float:right;" type="submit" value="Sign in">                                    
+                                <br style="clear:right">
+                            </div>                            
+                        </form>
+
+        <style type="text/css">
+            .popUp
+{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    /*Just to be sure... (older browsers)*/
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+
+            #signIn
+            {
+                text-decoration: underline;
+                color:black;
+                float:right;
+                font-size: 14px;
+            }
+
+        </style>
+
+
+
+                                <!-- server sided code will reveal login, or username here -->
+                        <a href="http://www.google.com" id="signIn">Sign in</a><br style="clear:right">
+
+        <!-- Sign in button reveals the popup prompt -->
+        <script type="text/javascript">
+            document.getElementById('signIn').addEventListener('click', function(e)
+            {
+                e.preventDefault();
+                document.getElementById('loginPrompt').style.display = 'block';
+            });
+        </script>     
+
+        <!-- Popup logic -->
+        <script type="text/javascript">
+
+            //Close the popup if you click outside the form area
+            document.getElementById('loginPrompt').addEventListener('click', function(){this.style.display = 'none';});
+            document.querySelector("#loginPrompt > form").addEventListener("click", function(e){e.stopPropagation();});
+
+            //The Esc key will also close the popup
+            document.addEventListener("keydown", function(e)
+            {
+                if(document.getElementById("loginPrompt").style.display != "none")
+                    if(e.keyCode == 27)
+                        document.getElementById('loginPrompt').style.display = 'none';
+            });          
+        </script>   
+
+
+
+
+    <form class="dataForm" id="DF1" method="get" action="SRS/dataRequestProxies/paragraphRequestProxy.php" style="border:1px solid blue;display: inline-block;">
+        Enter Text:
+        <input type="text" name="updatePara" placeholder="Text..." autocomplete="off">
+        <input type="hidden" name="paraID" value="1">
+        <input type="hidden" name="redirectPage" value="home">
+        <div style="display: none" class="targetElement">#para1</div> <!-- make this an input tag with value and disabled...if not there dont' update content..console.log() -->
+        <input id="DF1submit" type="submit" value="Update">
+    </form>
+        <!-- Form logic -->                                    
+        <script type="text/javascript">
+        $(".dataForm").each(function()
+        {
+            var formID = $(this).attr("id"); //alert there must be an id set, must be either get or post!, 
+            var formName = "#"+formID;
+            var formMethod = $(formName).attr("method");
+            var formAction = $(formName).attr("action");
+            var formTarget = $(formName+" > .targetElement").text();
+            $(formName).on("submit", function(event)
+            {
+                var formData = $(formName).serialize();
+                document.getElementById(formID).reset(); //clear the form so people can't spam it
+                event.preventDefault();
+                $.ajax(
+                {
+                    url: formAction,
+                    type: formMethod,
+                    data: formData,
+                    dataType: 'text',
+                    success: function(response)
+                    {
+                        //TODO get back a json_array that says "not logged in, data doesn't exist...etc" and have filename somethingAjaxRquest.php
+                        if(response != "")
+                        {
+                            if($(formTarget).prop("tagName").toLowerCase() != "input")
+                                $(formTarget).html(response);
+                            else
+                                $(formTarget).val(response);
+                        }
+                    }
+                });
+            });
+        });
+
+        </script>

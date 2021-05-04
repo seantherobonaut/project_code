@@ -1,0 +1,205 @@
+===========================(12/22/18)================================
+
+Front End Interface(reset requests, login, security questions, 2FA)
+
+Security Measures..... that unlock operations 
+	Multiple verification can unlock 1 method
+	Single verification can unlock 1 method
+***all in proxy? or in classes... what if user wants 1 verification to change multiple things? multiple verification, multiple actions?
+
+Verification
+(separate)(actionID?)
+Action
+
+User/UserData Classes (dataIO)
+
+UserData
+
+
+push a pending action... 
+   actions: login:true(null), changeEmail(push action to stack), changePassword(push action to stack)
+verify details
+perform action
+
+
+
+verifications (checkPassword, check2FA, check security questions, check email code) make sure security codes have types 2FA:code, email:code, questions:{answer1,answer2,answer3}
+
+---
+verification codes will be sent do specific action classes(or request urls)
+
+hidden parameter in prox code that passes data type to object/class (phone, email, etc..)
+url.com/action=resetPassword&code=aslkdjr3oi4534 (this code is check for a stack of codes only found on that action, the code is deleted once used)
+
+each action url will have a table that has codes with data
+
+
+=====================================================================
+
+What do you want this to do?
+
+Change password
+Change email
+Change user name
+Change phone number
+
+Create a new user + activate the account
+Delete a user
+
+login with username+pass
+login with email+pass
+
+login with 2FA+ email/pass or just user, or just email
+
+Authorization scripts for changing user details
+
+There will be a check to see if the user exists.
+Each change to the database will submit the query, than then search for the data just changed to confirm it.
+
+
+how to delete all users with x phone number
+
+
+
+
+
+
+
+-----------------------
+
+
+Ever newer idea! For Users I/O
+
+CRUD = all one class
+
+You load a record, then you can delete it, modify it, or read from it.
+You can unload a record, set the details then create a new one.... or error saying "to create a new record, this one must be unloaded first"
+
+
+
+
+
+
+
+
+
+
+
+
+Newest Idea (refer to ToDo #24 for basic overview)
+
+There will be a field called "password", if it is NOT empty, the system will ask for it.
+
+For 2FA, if phone number is empty, then do not ask for 2FA, if it is filled make a new authToken entry in the authTokens table. 
+Same for other security types with time delayed entry exchanges.
+
+Basic design, have several modules that check the existance of an entry.
+
+Ajax programmer will nest these to their desire, they will return true if there is no entry, or something rather than prompt user.
+
+
+
+//TODO re-arrange table order to have password, 2FA, and other security encryption methods in the back, and "active" in front
+
+Create Object => 
+
+Also, separate auth codes through email from actual actions
+
+
+getIDFromName(email)
+getIDFromEmail(email)
+
+deleteByID...maybe accept either id or name, and search records for a match?... no not a good idea
+
+
+
+
+
+
+!!! there will be a queue of requests to change various actions by "name", that are gradually cleared
+!!! encryption type for passwords are decided by ajax programmer, and they can choose to use or not use our login method(that uses a specificy decription method)
+
+
+
+
+
+
+
+
+New idea, create a series of objects for each task.
+Set the auth code, set this set that.
+Then when you try to submit changes, it will check if each field is met.
+This will allow expanding other security protocols.
+
+
+Delete User
+
+	//inputs
+	user_id
+	aut_code
+
+
+	createRequest()
+		...checks to see if user_id is set, etc
+
+	processRequest()
+		...checks to see if user_data has 2FA field, then will require 2FA field
+
+
+
+
+
+---===---
+add a method to getAuthLink() or authcode(to change which host it goes to) and have other software send the email
+
+Generate a different code each time for delete requests, and changing password requests
+
+Rather than having the email as part of any link, just send a longer code, and have a status of change waiting as a database entry
+
+pending:
+activation
+changePassword
+deletion
+changeEmail
+
+When the token is processed, delete it
+
+New table: auth_tokens id, user_id, token, action, data
+
+
+--------=================---------------
+
+usersTableRegister
+userRecords(when they logged in, from what IP, etc...)
+
+Or have logging as an option, interfaces for a written log
+
+
+Have all other data managed outside of the useraccount area... 
+
+Create Users
+	- other tasks such as creating user data, profile entries, etc...
+
+Delete Users
+	- delete all data linked to this user id
+	-delete byID
+	-delete byName
+	-delete more than one user
+
+Update user details
+	passwordBYID()
+	username()
+	email()	
+
+Get user data
+byID
+
+
+Advenced operations:
+	ForgotPassword
+		special tasks go here
+	CreateNewUser
+		special tasks go here
+
+	Logout
+

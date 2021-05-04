@@ -1,0 +1,12 @@
+<?php
+	$sql =
+	"
+		CREATE TABLE IF NOT EXISTS `scripts`
+		(
+			`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+			`path` VARCHAR(100) NULL DEFAULT NULL,
+			`type` VARCHAR(25) NULL DEFAULT NULL,
+			`condition` VARCHAR(50) NULL DEFAULT NULL
+		);
+	";
+?>

@@ -1,0 +1,19 @@
+be sure that all content and their buttons are encased in div to group them together so they do not float off
+
+have the edit content buttons sit below and to the right of all sub-content...
+	even if it is a template with just the option to 'delete' have an edit button like facebook	
+		this will cause a popup with more options...minimize layout change with picture button
+			...or jsut <button>edit</button> use js to toggle popup form
+
+
+maybe find something to do with the login page...
+
+
+create the paragraphTableRegister.php
+write form to send data to server
+write the addParagraphRequestProxy to handle the request
+
+write the delete form
+write the deleteParagraphRequestProxy
+
+instead of having a generic not found, have different objects say "no content listed" ...or "missing matching template"

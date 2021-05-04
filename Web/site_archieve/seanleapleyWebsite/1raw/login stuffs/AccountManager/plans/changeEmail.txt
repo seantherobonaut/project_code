@@ -1,0 +1,19 @@
+
+
+Change email address for the account
+	User must be logged in to choose this option
+	Send an email to the new email address(have them enter it twice)... if that email is already on the database it will give error
+		User can choose to delete the old account if they can login
+	Send email with link to new email address (link: url + route + code)
+	User clicks on link.
+	Website path accepts link
+		does email exist? 
+		using find matching code
+		if auth code is not too old
+			ask user to enter password and click 'delete account'
+		if it is too old, tell them the link is old, if the user even exists, or the link is expired
+
+
+createRequest($userID, $newEmail, $confirmNewEmail) //return a code, or -1 if no account -2 if that email is already used, -3 if emails do not match
+
+processRequest($code) //since this method is in the changeEmail package action is implied - return -1 if not found, -2 if code is expired

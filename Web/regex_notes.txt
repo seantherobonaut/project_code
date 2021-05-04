@@ -1,0 +1,44 @@
+    /*
+    all matches can happen anywhere in a string!
+
+    Php regex must all start and end with a single character delimiter.
+    It cannot be alphanumeric or backslash.
+
+    the ending flag 'i' means non-case sensitive
+    or at the start of the string like (?i) Ex: ~(?i)bob~
+
+    \d can match to any digit 0-9 
+
+    . = wild card
+    \. is just a period... ANYWHERE     
+
+    things in side brackets only match one character [abc] will only match a single a or b or c 
+
+    [^abc] match with everything except an a or b or c
+
+    [^a-d] will match all characters except for those in a-d
+
+    [A-Za-z0-9] (multiple character ranges witin brackes)
+        \w is any alphanum char, \W is any non-alphanum char
+
+    IDEA! Phone numbers can often be written as +1 234-5678 or (234)567-890 ... but with regex, you have the power to select only the numbers and return those, no find and replace needed!!!
+
+    The * means any number of so \d* means any number of digits
+    \d+ means at least one
+
+    ? can optionally match a character
+    ab?c can match "ac" or "abc"
+
+    \s matches any whitespce character
+
+    still not sure about ^asdf$ - apparently they are to match beginning and ending of a string exactly? 
+
+    (asdf) can return the string you want back ex: (^file_.+)\.  returns all the file names of files starting with file_ but leaving out the extension    
+
+    Match   1.   abc   
+    Match   2.  abc
+    Match   3.           abc   
+    Skip    4.abc
+    "\d\.[\s]+abc"
+
+    */

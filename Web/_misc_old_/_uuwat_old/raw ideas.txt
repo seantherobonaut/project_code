@@ -1,0 +1,72 @@
+
+
+
+			permissions.... contentstuff->hasPermission(pass in variables that must be set or true)?
+			or get back rows if the permissions exist
+
+___
+
+
+COMPAT error is special because it is a front end error...only a user can mess that up not the server or coder
+if(localhost/compaterror == true)
+	set $errors = true
+	do not load the redirect meta
+
+for loop missing files
+	It takes the contents of a filetree.txt from root directory and loops through it
+		if even one file is missing, $errors=true and it pushes all missing files to an array that are displayed in the log file
+
+___________Ignore Below lines______________________________
+	
+
+	install script (dev page)
+		dev page is displayed when there is no config file
+		later, dev page can only be access from password login with url /dev
+
+		checks files
+		creates tables
+		only runs when the config file does not exist
+		grabs db users
+		installs permissions and groups maybe from yml or json files
+
+		update permissions
+
+		website accounts vs mysql accounts
+
+	each time a plugin is added or the templates changed, the update or install script can be run agagin
+
+	base install
+	update templates
+	install plugin
+
+
+heredoc would allow you tou put all html in classes...and put stuff inside it.
+
+		perhaps make a script to set permissions on all files...with parameters?
+			make all files from the webclient no execute or read except index, logout or other action files
+			on ftp server, only certain users can read/write code but all can include/execute to not overwrite methods
+			Example: globally allow localhost/error.php but localhost/uuwat/debugger.php returns "location forbidden chmod"
+				...also all request handlers can be executed ex: localhost/modules/userauthentication/requestLogin.php
+
+
+	for calling content locations on webpage
+	$paragraph = new ReadPara($db, array(34,55,2,31,19,27))...the literal ids of images (serverside)
+	$paragraph->item(1)
+	$paragraph->item(2)
+	$paragraph->item(3)
+	$paragraph->itemID(4) 4th item in assoc array called "id=4" in html
+	$paragraph->itemData(4) 4th item in assoc array called "texthere"
+
+
+	all write functions go to ajax? php only reads output?
+
+	have javascript functions subscribe to event handler...upon inserting new data rerender the page but NOT refresh
+		*rerender = execute all window resize functions
+
+
+			lol, make a function that ensures each file has a newline at the end for github
+
+		idea for permissions:
+			no permission nodes...each acttion or piece of data will have a seperate table
+			that lists groups or conditions that it needs to peform the action. Seperate tables following
+			oop design. The only permission "stuff" will be in the permissions table.

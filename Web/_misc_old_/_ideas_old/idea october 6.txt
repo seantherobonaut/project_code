@@ -1,0 +1,35 @@
+on resize function, on window resize pass data to a function(args) and return either true or false..1 or 0, and upon zero the funcion will do its thing
+dither display as block or inline or something else
+
+eventually make hard coded pandora widget, but for now just make a collapsable or expandable iframe that loads on start...or look up the scripts that control iframe embeds
+
+
+possible other goal, now people can make their websites and apps...why use facebook mainly other than an API?
+
+Just pull facebook posts from one users for their "wall" and the WEBRTC chat linked with facebook chat AND SMS (make an app for it too and link everything)
+Now you ahve most functionality from facebook without ads and games and crap and you can customize it for your own website
+add another widget that allows you to go to other peoples custom facebook/personal websites that have facebook integration...listen to their pandoar music too?
+After adding sms and chat support as an app...it is basiclaly facebhook texting and instigram (for taking photos) all in one
+
+
+make my own damn texting app where i can use it anywhere as long as the device has an app i can sign in and send and recieve sms message
+anywhere in the world and have them backed up somewhere...can the same be done with video calling or audio calling?
+
+mysms app microsoft store use for just now
+
+
+what is difference...webRTC, irc, websockets, socketIO.....just found out webRTC has audio, video, and networking....well more browsers support websockets than datachannels...poop...webRTC.io different? browser support?
+
+also compress datastream before sending? or too much latency?
+
+How about using the data channel to create web servers inside browsers? This can reduce the need for “real” web servers to run services, and use those only as points of access into the dynamic network that is created ad-hoc.
+torrent on web???Take 1 and 2, bunch them together and you get bit torrent running on the web – the ability to share a file from one source on the web with anyone, but have those who access that file collaborate between them to get it.
+
+
+So in a nutshell:
+WebSockets allow full-duplex communication between a browser and a web server.
+WebRTC's PeerConnection allows full-duplex communication between two browsers.
+
+
+
+compiled python code...Nuitka

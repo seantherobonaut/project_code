@@ -1,0 +1,13 @@
+Handler can be very generic
+..Handler
+
+..UI for user interface
+
+..Interface
+..Abstract
+..Class
+
+..TableRegister
+..PackageRegister
+
+..RequestProxy

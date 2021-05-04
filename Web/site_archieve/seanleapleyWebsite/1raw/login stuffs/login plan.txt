@@ -1,0 +1,11 @@
+Create new users
+update password
+update username
+user has unique id
+upate email
+
+all db interactions are seperate from user class (if there ever is a user class)
+
+crud ops for user object
+
+forgot password (via email) with links that expire
