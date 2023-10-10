@@ -1,0 +1,60 @@
+.toolBar
+{
+	display:block;
+	background-color: #555;
+	padding:0px 14px;
+}
+.toolBar *{color:white; font-family: sans-serif;}
+.toolBar input, .toolBar select, .toolBar option {color:black;}
+.toolBar > div {padding:10px 0px;}
+.toolBar ul {margin:0px;}
+.toolBar ul, .toolBar ul li a {font-size:15px;}
+.toolBar button
+{
+	border:none;
+	cursor: pointer;
+}
+
+#addPageButton
+{
+	background-color:#555;
+	text-decoration: underline;
+}
+
+/*This is the popup container*/
+.toolBar #alertPopup
+{
+	position: fixed;
+	top:0px;right:0px;bottom:0px;left:0px;
+	background-color: rgba(0, 0, 0, 0.8);
+	z-index: 50;
+	height:100%;
+	width:100%;
+	text-align: center;
+	display: none;
+}
+
+/*Invisible container for the contents*/
+.toolBar #alertPopup > div
+{
+	display: inline-block;
+	margin-top:70px;
+	text-align: right;
+}
+
+.toolBar #alertPopup #alertBox
+{
+	border:1px solid white;
+	border-radius: 10px;
+	background-color: white;
+	text-align: left;
+	padding:5px 10px;
+
+}
+
+.toolBar #alertPopup #alertBox form
+{
+	color:black;
+	font-size: 16px;
+}
+

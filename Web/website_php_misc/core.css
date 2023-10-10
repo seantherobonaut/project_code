@@ -1,0 +1,72 @@
+/* Weak css to allow easy overriding (.text rather than p.text) */
+
+/* Styling for div and span tags */
+.struct
+{
+    box-sizing: border-box;
+    font-size: 0px;
+}
+span.struct
+{
+    display: inline-block;
+}
+
+/* Styling for images and hyperlinks */
+.block
+{
+	display:block;
+	box-sizing: border-box;
+}
+.inline
+{
+	display:inline-block;
+	box-sizing: border-box;
+}
+
+/* Styling for buttons and forms */
+.dataform
+{
+	box-sizing: border-box;
+	font-size: 0px;
+}
+.dataform input[type="text"], .dataform input[type="password"]
+{
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	padding:2px 4px;
+	border:1px solid #a5a5a5;
+	background-color: white;	
+}
+.button, .dataform input[type="submit"]
+{
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	cursor: pointer;
+	padding:2px 4px;
+	border:1px solid #a5a5a5;
+	background-color: #eaeaea;
+}
+.dataform input, .dataform button
+{
+	font-size: 16px;
+	height:30px;	
+}
+/* Weird chrome vertical alignment fix */
+.dataform input[type="submit"]{margin-top:1px;}
+
+/* Hover actions */
+.button:hover, .dataform input[type="submit"]:hover
+{
+	background-color: #E3F0FC;
+	border-color: #7EB4EA;
+}
+/*Make it move to the right slightly when clicked*/
+.button:active, .dataform input[type="submit"]:active
+{
+	padding-left:5px;
+	padding-right: 3px;
+}

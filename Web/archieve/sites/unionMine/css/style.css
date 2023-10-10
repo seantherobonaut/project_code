@@ -1,0 +1,190 @@
+@import url("../css/jsmenu.css");
+@import url("../css/slideshow.css");
+@import url("../css/cssABI.css");
+
+	body
+	{
+	padding:0px 0px;
+    //  background-color:#000033;
+    //  background-image: url('../images/background-home1.png');
+    //  background-repeat: no-repeat;
+    //  background-attachment:fixed;
+        background-image: url('../images/background_.png');
+        background-attachment:fixed;
+	font-family: Verdana;
+	font-size: .92em;
+	color:white;
+	}
+	
+	#wrapper
+	{
+	position:relative;
+	width:1000px;
+	margin:auto;
+/*	border:1px solid white;   commented out because it was previously a marker for page borders*/
+	padding:0px 15px 15px 15px;
+	}
+	
+    #navbar
+	{
+	margin:auto;
+	margin-top:15px;
+	}
+    
+	.box
+	{
+	margin-top:15px;
+	background-color:#000022;
+	border: 3px double #600000;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	-o-border-radius:10px;
+	-webkit-border-radius:10px;
+	z-index:-1;
+	}
+    
+	.box  a
+	{
+	color:white;
+	text-align: left;
+	}
+	
+	.box  a:visited
+	{
+	text-decoration:underline;
+	}
+
+	.box  a:hover
+    {
+	text-decoration:none;
+	}
+	
+	.header
+	{
+	min-height:100px;
+	background:url(../images/snake.png) center center;
+	}
+	
+	.slideshow
+	{ 
+	padding-top: 0px;
+	padding-left: 15px;
+	margin-top: 0px;
+	height:300px;
+	z-index:-5;
+	border: 2px solid #600000;
+	}
+	
+	.content
+	{
+	padding: 15px;
+	padding-top: 10px;
+	padding-bottom:20px;
+	width:700px;
+    min-height:465px;
+	text-align:left;
+	font-family:arial;
+	float:left;
+	margin:auto;
+	margin-top: -10px;
+    line-height:25px
+	}
+	
+	.sidebar
+	{
+	padding:15px;
+	float:right;
+    min-height:465px;
+	width:220px;
+	margin-top: -10px;
+	}
+	
+	.footer
+	{
+	padding: 15px;
+	height:35px;
+    text-align:center;
+    color:black; /*#151515*/
+	background:url(../images/footer.png) center center;
+	}
+	
+	.homelinks, .homelinks:visited
+	{
+	color:white;
+	padding:7px 100px 7px 70px;
+	margin-left:-55px;
+	color:white;
+	text-decoration:underline;
+	}
+
+	.homelinks:hover
+	{
+	color:#880022;
+	text-decoration:none;
+	margin-left:-45px;
+	}
+    
+	h1, h2, h3
+	{
+	color: white;
+	font-family:papyrus;
+	text-align:center;
+	}
+
+  .content > h2
+     { 
+   font-size:190%
+   }
+    
+    .sidelink, .sidelink:visited
+    {
+    color:white;
+    text-decoration:underline;
+    line-height:35px;
+    padding:7px 15px; 
+    }
+    
+	.sidelink:hover
+	{
+	color:#880022;
+	text-decoration:none;
+	font-weight:bold;
+    margin-left:10px;
+	}
+    
+    .para
+    {
+    margin-left:50px;
+	
+    }
+    
+	.email:hover{margin-left:-55px;}
+	
+	.credits
+	{
+	margin-top:25px;
+	margin-left:20px;
+	width:600px;
+	}
+	
+	.credits tr
+	{
+	height:20px;
+	}
+	
+    .credits td
+	{
+	font-size:110%;
+	}
+	
+	.credcol1
+	{
+	text-align:right;
+	font-style:italic;
+	}
+	
+	.credcol2
+	{
+	font-weight:bold;
+	}
+	

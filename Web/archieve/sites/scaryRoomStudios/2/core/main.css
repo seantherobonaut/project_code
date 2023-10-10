@@ -1,0 +1,36 @@
+body
+{
+	/*color:white;*/
+}
+
+.partition
+{
+	padding:0px 10px;
+}
+
+.header
+{
+	border:1px dashed gray;
+	border-width: 1px 0px;
+	margin-top:20px;
+	margin-bottom:20px;
+	box-sizing: border-box;
+}
+
+.footer
+{
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+.srsmodule
+{
+	/*border:1px solid blue;*/
+}
+
+.main > .srsmodule
+{
+	border-radius: 5px;
+	overflow: hidden;
+	background: rgba(0, 0, 0, .7);
+}

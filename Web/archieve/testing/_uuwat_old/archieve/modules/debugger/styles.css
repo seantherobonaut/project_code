@@ -1,0 +1,11 @@
+#debug
+{
+	position: absolute;
+	top:0px;
+	left:0px;
+	width:200px;
+	height:200px;
+	border:1px solid white;
+	color:white;
+	z-index: 10;
+}

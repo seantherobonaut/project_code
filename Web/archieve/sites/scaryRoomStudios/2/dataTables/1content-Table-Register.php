@@ -1,0 +1,25 @@
+<?php
+	$sql =
+	"
+		CREATE TABLE IF NOT EXISTS images
+		(
+			`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+			`file_path` VARCHAR(100) NULL,
+			`group` VARCHAR(50) NULL DEFAULT NULL
+		);
+
+		CREATE TABLE IF NOT EXISTS hyperLinks
+		(
+			`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+			`url` VARCHAR(150) NULL,
+			`group` VARCHAR(50) NULL DEFAULT NULL
+		);
+
+		CREATE TABLE IF NOT EXISTS headings
+		(
+			`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+			`text` TEXT NULL,
+			`group` VARCHAR(50) NULL DEFAULT NULL
+		);
+	";
+?>

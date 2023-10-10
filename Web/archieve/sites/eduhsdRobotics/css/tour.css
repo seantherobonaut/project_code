@@ -1,0 +1,11 @@
+#simplegallery1
+	{ 
+	border: 2px ridge #444;
+	font-family:verdana;
+	}
+
+#simplegallery1 .gallerydesctext
+	{
+	text-align: left;
+	padding: 2px 5px;
+	}

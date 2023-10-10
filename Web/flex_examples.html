@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Flexbox Examples</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <style type="text/css">   
+            .boxBig
+            {
+                background-color: #E6E2EB;
+                border:1px solid #BFB4CC;
+            }      
+            .boxBig:last-child {margin-bottom: 0px;}
+            .boxSmall
+            {
+                background-color: #D1C9DA;
+                border:1px solid #BFB4CC;
+                padding:8px;
+            }  
+
+            #flexer1
+            {
+                display: flex;
+                align-items: stretch;
+
+                flex-direction:column;
+                height:500px;
+            }
+            #flexer1 > div
+            {
+                border:1px solid black;
+                text-align: center;
+                font-size: 15px;
+                padding:5px;
+            }            
+
+            #flexer2
+            {
+                display: flex;
+                flex-direction: column;
+
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                align-items: stretch;
+                align-content: stretch;
+
+                height:300px;
+            }
+            #col1
+            {
+                background-color: yellow;                
+                flex-grow: 1;
+                flex-shrink: 0;
+                flex-basis: 240px;                
+            }
+            #col2
+            {
+                background-color: orange;
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-basis: 200px;                
+            }
+            #col3
+            {
+                background-color: purple;                
+                flex-grow: 1;
+                flex-shrink: 0;
+                flex-basis: 240px;                
+            }              
+            #nested
+            {                                
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-basis: auto;
+                display: flex;
+            }
+
+            #vertAlign
+            {
+              display: flex;
+              align-items: center;
+              
+              height: 200px;
+              border:1px solid black;
+            }            
+        </style>
+    </head>
+    <body>    
+        <!-- Header/Content/Footer example1 -->
+        <div id="flexer1" class="mb-2">
+            <div style="flex-shrink: 0">header</div>
+            <div style="flex-grow: 1">content</div>
+            <div style="flex-shrink: 0">footer</div>
+        </div>
+
+        <!-- Header/Content/Footer example2 -->
+        <div id="flexer2" class="mb-2">
+            <div style="background-color: red;">
+                Header
+            </div>
+            <div id="nested" style="background-color: green;">
+                <div id="col1">col1</div>
+                <div id="col2">col2</div>
+                <div id="col3">col3</div>
+            </div>
+            <div style="background-color: lightblue;">
+                Footer
+            </div>  
+        </div>    
+
+        <div id="vertAlign" class="mb-2">
+            <div style="  border:1px dashed grey;width: 100px;height:40px;"></div>
+        </div>
+
+        <!-- Space between & space around -->
+        <div class="container mb-2" style="border:1px solid #BFB4CC">
+            <div class="boxBig d-flex justify-content-between">
+                <div class="boxSmall">Flex item 1</div>
+                <div class="boxSmall">Flex item 2</div>
+                <div class="boxSmall">Flex item 3</div>
+            </div>
+            <div class="boxBig d-flex justify-content-around">
+                <div class="boxSmall">Flex item 1</div>
+                <div class="boxSmall">Flex item 2</div>
+                <div class="boxSmall">Flex item 3</div>
+            </div>
+        </div>           
+
+        <!-- Adding mb-auto uses auto margins to stack things -->
+        <div class="boxBig mb-2 d-flex align-items-start flex-column" style="height: 200px;">
+            <div class="boxSmall">Flex item</div>
+            <div class="boxSmall my-auto">Flex item</div>
+            <div class="boxSmall my-auto">Flex item</div>
+            <div class="boxSmall">Flex item</div>
+        </div>
+
+        <!-- Organizes items based on how many are collapsed -->
+        <div class="boxBig d-flex align-content-between flex-wrap" style="height: 200px">
+            <div class="boxSmall">Flex item</div>
+            <div class="boxSmall">Flex item</div>
+            <div class="boxSmall">Flex item</div>
+            <div class="boxSmall">Flex item</div>
+            <div class="boxSmall">Flex item</div>
+            <div class="boxSmall">Flex item</div>
+            <div class="boxSmall">Flex item</div>
+            <div class="boxSmall">Flex item</div>
+            <div class="boxSmall">Flex item</div>
+            <div class="boxSmall">Flex item</div>
+            <div class="boxSmall">Flex item</div>
+            <div class="boxSmall">Flex item</div>
+            <div class="boxSmall">Flex item</div>
+            <div class="boxSmall">Flex item</div>
+            <div class="boxSmall">Flex item</div>
+        </div>     
+    </body>
+</html>

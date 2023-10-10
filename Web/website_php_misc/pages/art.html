@@ -1,0 +1,13 @@
+	<script type="text/javascript">
+		document.write('<div class="ctable">');
+		for(counter = 0;counter < imageArray.length;counter = counter + 3)
+		{
+			document.write('<div class="ctr">');
+			for(var i = 0; i < 3; i++)
+			{
+				document.write('<div class="ctd"><a href="' + imageArray[(counter+i)][2] + '" target="_blank"><img src="' + imageArray[(counter+i)][1] + '" />' + imageArray[(counter+i)][0] + '</a></div>');
+			}
+			document.write('</div>');
+		}
+		document.write('</div>');
+	</script>

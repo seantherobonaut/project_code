@@ -1,0 +1,11 @@
+background options:
+full image/repeated background
+full image done
+	repeated background with attachment...div expands all page position fixed: background repeated inside
+
+call diagnostic function with a url argument include settimeout before it renders
+
+external pages vs internal pages
+
+<!-- TODO detect the largest width of child elements and set it as the minimum width for the parents to prevent overflowing text. -->
+<!-- TODO Collapse navlinks into icons before making a mobile menu -->

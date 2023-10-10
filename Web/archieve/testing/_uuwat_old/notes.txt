@@ -1,0 +1,35 @@
+instead of using dots . use commas , they are faster in php
+rather than using double quotes, use single quotes they are faster (no check for variables in there? test)
+http://www.wardontheweb.com/10-performance-tips-to-speed-up-php/
+
+pass variables by reference
+
+echo <<<HERE_DOC
+My name is "$name". I am printing some $foo->foo.(no need for newline character)
+Now, I am printing some {$foo->bar[1]}.
+This should print a capital 'A': \x41
+HERE_DOC; ...must be by itself with NO indent!
+
+abstraction is key, make a class do one thing, and one thing really well
+	redflag when you have to plan around tons of things to get a simple task done
+
+
+OOP:
+try to limit the number of arguments methods have to provide a common interface
+apparently, all classfile, abstracts, and interfaces) can only be included once
+Extend to abstract classes to specialize them. 
+use other classes constructors mainly to input other objects
+or in the constructor have the other object instantiated and send it properties
+
+have objects inside classes, write the interfaces first
+
+start making base abstract classes that have properties and methods and abstract methods
+so it will be easier to make baseLogger, baseErrorMessage stuff like that It will make modular plugand Play easier
+plan out how your classes will work first with interfaces
+
+Second, inheritance is used to SPECIALIZE, not EXTEND with extra functionality. This is the most misunderstood thing in OOP. As a rule of thumb I tend to extend abstract classes only.
+... well done inheritance is a specialization of the contracts defined by the super type 
+
+implementation of an object should be completely hidden from the objects that use it
+
+passing variables by reference

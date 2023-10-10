@@ -1,0 +1,22 @@
+So here's the plan...
+
+Make a 2D game the player as a square can move around the screen and not go off the edge
+
+Canvas
+
+Entity
+    Mesh
+    Movement
+
+
+
+
+
+
+Modify the game so the player can shoot bullets at stationary targets and make them vanish
+
+Modify the targets so they can follow the player and touch kills player
+
+Modify targets so they can shoot back
+
+Modify game so all entities have health,

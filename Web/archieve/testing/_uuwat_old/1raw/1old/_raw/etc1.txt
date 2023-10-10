@@ -1,0 +1,13 @@
+
+button printed by php (button...targetid...function) unhides an invisible form(is printed with every content)
+and sets the form's id
+		there is a solid transparent div at z-index:50, then the form at 51
+	closing the form, hides the form, and hides the popup
+
+
+the form uses the button's id to submit an ajax request
+depending on successful, either a window alert will come up saying "cannot do this not logged in..etc"
+or nothing and change page content using the type and id of the target...
+	but in order to do that you need to get html output of that template or post from the server
+
+you might need to alter or make a new requestproxy= path so include autoloader, error handler, etc...

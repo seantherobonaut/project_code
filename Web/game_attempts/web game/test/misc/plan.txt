@@ -1,0 +1,32 @@
+Notes: 
+Class.call(this) is just like calling the super constructor (super)
+protoInherit() is like extending just the class but without inheriting the methods
+
+
+http://devmag.org.za/2011/02/23/quadtrees-implementation/
+https://en.wikipedia.org/wiki/Quadtree
+
+Every entity will be setup and copied
+
+EntityBase
+  ext: EntityPlayer
+  ext: EntityAI
+
+New entity
+
+entity.collision
+entity.visual
+entity.physmesh
+
+every entity with have entity.render()
+if entity.visual = null, entity.render() will say so.
+
+Entity
+  vMesh = 
+  physMesh = 
+
+  x = 
+  y = 
+  move()
+  think() //calculates movement and physics
+  render() //renders what it looks like

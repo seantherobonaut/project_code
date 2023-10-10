@@ -1,0 +1,8 @@
+
+# HTID:6904958: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:6904958:
+AuthName "Member's Area Name"
+AuthUserFile /path/to/password/file/.htpasswd
+AuthType Basic
+require valid-user

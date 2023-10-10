@@ -1,0 +1,148 @@
+box sizing: border box
+
+css attribte selector
+
+[title~=flower] {
+    border: 5px solid yellow;
+}
+
+css calc()
+
+
+:target
+:focus
+~ +
+transition
+whitespace nowrap
+
+			:root
+			{
+				--asdf:300px;
+			}
+max-width: var(--asdf);
+
+/* IE */
+width: expression(100% - 500px);
+/* Firefox */
+width: -moz-calc(100% - 500px);
+/* WebKit */
+width: -webkit-calc(100% - 500px);
+/* Opera */
+width: -o-calc(100% - 500px);
+/* Standard */
+width: calc(100% - 500px);
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+/* Keyword values */
+width: 25em border-box;
+width: 75% content-box;
+width: max-content;
+width: min-content;
+width: available;
+width: fit-content;
+-moz-
+-webkit-
+
+
+for needing breakline elements with clear:both ...do parent:after{clear:Both;}
+vh = viewport height...fontsizes, border width...anything!!!!!!
+vw
+
+width: auto;
+
+
+($height / $width) * 100%; ---maintain aspect ratio?
+
+with php just multiply width by width*ratioPrecent (.5625)
+
+for absolute position to work, relative positioning must be parent
+
+
+
+
+
+
+aspect ratio code
+
+		<style type="text/css">
+.wrapper {
+  width: 50%;
+  /* whatever width you want */
+  display: inline-block;
+  position: relative;
+}
+.wrapper:after {
+  padding-top: 56.25%;
+  /* 16:9 ratio */
+  display: block;
+  border:3px dashed red;
+  content: 'asdfasdf';
+}
+.main {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  /* fill parent */
+  background-color: deepskyblue;
+  /* let's see it! */
+  color: white;
+}
+		</style>
+<div class="wrapper">
+  <div class="main">
+    This is your div with the specified aspect ratio.
+  </div>
+</div>
+<div>
+	hello world
+</div>
+
+
+
+
+
+
+
+#cssonclickswitch a:focus ~ ul li
+
+                    -webkit-transform: scaleY(0.5);
+                    -o-transform: scaleY(0.5);
+                    -ms-transform: scaleY(0.5);
+                    transform: scaleY(0.5);
+
+                    -webkit-transform-origin: top;
+                    -o-transform-origin: top;
+                    -ms-transform-origin: top;
+                    transform-origin: top;
+            use tansform y and height ....or normal transform with max height?...try padding -100%? or margin
+
+            #menu div {
+                transition: 0.5s 1s;
+                z-index:-1;
+                -webkit-transform:translateY(-100%);
+                -webkit-transform-origin: top;
+            }
+            and hover is :
+
+            #menu > li:hover div {
+                transition: 0.5s;
+                -webkit-transform:translateY(0);
+            }
+            and because ul height is set to the content it can get over your body content that's why I did this for ul:
+
+             #menu ul {
+                transition: 0s 1.5s;
+                visibility:hidden;
+                overflow:hidden;
+            }
+            and hover:
+
+            #menu > li:hover ul {
+                 transition:none;
+                 visibility:visible;
+            }

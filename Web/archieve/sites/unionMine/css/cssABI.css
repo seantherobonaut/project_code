@@ -1,0 +1,650 @@
+
+
+INPUT.txtGrdBkInput
+{
+    FONT-SIZE: .75em;
+    HEIGHT: 18px;
+    TEXT-ALIGN: right;
+}
+
+.WithHeader
+{
+	font-family: Verdana, Arial, Helvetica, Sans-Sarif;
+	font-size: .92em;
+	margin-top: 3px;
+	margin-left: 3px;
+	margin-right: 3px;
+	color: #000000;
+	
+	background-image:url(images/TopBanner.gif);
+	background-repeat:repeat-x;
+	background-color:#95B4DC;
+}
+
+td.TopTabLeft
+{
+	height: 41px;
+	width: 11px;
+}
+
+td.TopTabMid
+{
+	background-image: url(images/TabBack.gif);
+	background-repeat: repeat-x;
+	height: 41px;
+	padding-top: 17;
+	padding-left: 1;
+	padding-right: 1;
+	text-align: center;
+	vertical-align: top;
+	cursor: pointer;
+	cursor: hand;
+	color: #000000;
+	font-weight: bold;
+}
+
+td.TopTabMidUp
+{
+	background-image: url(images/TabBackUp.gif);
+	background-repeat: repeat-x;
+	height: 31px;
+	padding-bottom: 8;
+	text-align: center;
+	font-weight: bold;
+	vertical-align: bottom;
+	cursor: pointer;
+	cursor: hand;
+	color: #000000;
+}
+
+td.TopTabMidUpOn
+{
+	background-image: url(images/TabBackUpOn.gif);
+	background-repeat: repeat-x;
+	height: 31px;
+	padding-bottom: 8;
+	text-align: center;
+	font-weight: bold;
+	vertical-align: bottom;
+	cursor: pointer;
+	cursor: hand;
+	color: #000000;
+}
+
+td.TopTabRight
+{
+	background-repeat: no-repeat;
+	height: 41px;
+	width: 52px;
+}
+
+td.subTopLinksOff
+{
+	background-color: #6186B3;
+	height: 3;
+}
+
+td.subTopLinksOn
+{
+	background-color: #CECBDE;
+	height: 3;
+}
+
+td.Tab2Div
+{
+	height: 18px;
+	width: 3px;
+	border-bottom-color: #CECBDE;
+	border-top-width: 0;
+	border-bottom-width: 2;
+	border-right-width: 0;
+	border-left-width: 0;
+}
+
+td.Tab2Mid
+{
+	background-image: url(images/Tab2Back.gif);
+	background-repeat: repeat-x;
+	height: 18px;
+	padding-top: 1;
+	padding-bottom: 1;
+	padding-left: 10;
+	padding-right: 10;
+	text-align: center;
+	vertical-align: middle;
+	font-weight: bold;
+	font-family: Arial, Helvetica, Verdana, Sans-Sarif;
+	FONT-SIZE: .83em;
+	color: #020066;
+	letter-spacing: 1;
+	cursor: pointer;
+	cursor: hand;
+	border-color: #CECBDE;
+	border-top-width: 0;
+	border-bottom-width: 2;
+	border-right-width: 0;
+	border-left-width: 0;
+}
+
+td.Tab2MidOn
+{
+	background-image: url(images/Tab2Back_on.gif);
+	background-repeat: repeat-x;
+	background-color: #1E1C5A;
+	height: 18px;
+	padding-top: 1;
+	padding-bottom: 1;
+	padding-left: 10;
+	padding-right: 10;
+	text-align: center;
+	vertical-align: middle;
+	font-weight: bold;
+	font-family: Arial, sans-sarif;
+	FONT-SIZE: .83em;
+	color: #FFFFFF;
+	letter-spacing: 1;
+	cursor: pointer;
+	cursor: hand;
+	border-color: #CECBDE;
+	border-top-width: 0;
+	border-bottom-width: 2;
+	border-right-width: 0;
+	border-left-width: 0;
+}
+
+a.TopLinks
+{
+	color: #000000;
+	text-decoration: none;
+	display: block;
+}
+
+a.TopLinksOn
+{
+	color: #FFFFFF;
+	text-decoration: none;
+	display: block;
+}
+
+a.HeaderLink
+{
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+a:hover.HeaderLink
+{
+	text-decoration: none;
+}
+
+
+img.TopTabsRight
+{
+	border-width: 0;
+	width: 52;
+	height: 41;
+}
+
+img.TopTabsLeft
+{
+	border-width: 0;
+	width: 11;
+	height: 41;
+}
+
+img.UpTabsLeft
+{
+	border-width: 0;
+	width: 11;
+	height: 31;
+}
+
+img.UpTabsRight
+{
+	border-width: 0;
+	width: 3;
+	height: 31;
+}
+
+td.HeaderCell
+{
+	background-color: #6186B3;
+	color: #FFFFFF;
+	FONT-SIZE: .92em;
+	padding-left: 1;
+	padding-right: 1;
+	border-color: #FFFFFF;
+	border-right-color: #FFFFFF;
+}
+
+td.HeaderCellBold
+{
+	background-color: #6186B3;
+	color: #FFFFFF;
+	font-weight: bold;
+	FONT-SIZE: 1em;
+	padding-left: 1;
+	padding-right: 1;
+}
+
+td.HeaderCellComp
+{
+	background-color: #6186B3;
+	color: #FFFFFF;
+	FONT-SIZE: .92em;
+	padding-left: 0;
+	padding-right: 0;
+	border-color: #FFFFFF;
+	border-right-color: #FFFFFF;
+}
+
+td.HeaderCellCompBold
+{
+	background-color: #6186B3;
+	color: #FFFFFF;
+	font-weight: bold;
+	FONT-SIZE: 1em;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+tr.HeaderRow
+{
+	background-color: #6186B3;
+	color: #FFFFFF;
+	FONT-SIZE: .83em;
+	vertical-align: bottom;
+	padding-left: 1;
+	padding-right: 1;
+	border-color: #FFFFFF;
+	border-right-color: #FFFFFF;
+	border-bottom-style: solid;
+	border-bottom-color: Black;
+	border-bottom-width: 5px;
+}
+
+tr.HeaderRowNew
+{
+	background-color: #FFFFFF;
+	background-image: url(images/HeaderBackground.jpg);
+	background-repeat: repeat-x;
+	height: 24px;
+	color: #000000;
+	FONT-SIZE: .83em;
+	vertical-align: bottom;
+	padding-left: 1;
+	padding-right: 1;
+}
+
+tr.HeaderRowBold
+{
+	background-color: #6186B3;
+	color: #FFFFFF;
+	font-weight: bold;
+	FONT-SIZE: .83em;
+	vertical-align: bottom;
+	padding-left: 1;
+	padding-right: 1;
+}
+
+tr.HeaderRowBoldNew
+{
+	background-color: #FFFFFF;
+	background-image: url(images/HeaderBackground.jpg);
+	background-repeat: repeat-x;
+	height: 24px;
+	color: #000000;
+	font-weight: bold;
+	FONT-SIZE: .75em;
+	vertical-align: bottom;
+	padding-left: 1;
+	padding-right: 1;
+}
+
+tr.ReportHeaderRow
+{
+	background-color: #000000;
+	color: #FFFFFF;
+	FONT-SIZE: .75em;
+	vertical-align: bottom;
+	padding-left: 1;
+	padding-right: 1;
+	border-color: #FFFFFF;
+	border-right-color: #FFFFFF;
+}
+
+tr.ReportHeaderRowSmall
+{
+	background-color: #000000;
+	color: #FFFFFF;
+	FONT-SIZE: .65em;
+	vertical-align: bottom;
+	padding-left: 1;
+	padding-right: 1;
+	font-weight:500;
+}
+
+tr.ReportHeaderRowBold
+{
+	background-color: #000000;
+	color: #FFFFFF;
+	font-weight: bold;
+	FONT-SIZE: .92em;
+	vertical-align: bottom;
+	padding-left: 1;
+	padding-right: 1;
+}
+
+tr.HeaderRowComp
+{
+	background-color: #6186B3;
+	color: #FFFFFF;
+	FONT-SIZE: .83em;
+	vertical-align: bottom;
+	padding-left: 0;
+	padding-right: 0;
+	border-color: #FFFFFF;
+	border-right-color: #FFFFFF;
+}
+
+tr.HeaderRowCompBold
+{
+	background-color: #6186B3;
+	color: #FFFFFF;
+	font-weight: bold;
+	FONT-SIZE: .92em;
+	vertical-align: bottom;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+td.HeaderHighlight
+{
+	background-color: Yellow;
+	color: #000000;
+	FONT-SIZE: .83em;
+	vertical-align: bottom;
+	padding-left: 1;
+	padding-right: 1;
+}
+
+td.HeaderHighlightBold
+{
+	background-color: Yellow;
+	color: #000000;
+	font-weight: bold;
+	FONT-SIZE: .92em;
+	vertical-align: bottom;
+	padding-left: 1;
+	padding-right: 1;
+}
+
+td.HeaderHighlightComp
+{
+	background-color: Yellow;
+	color: #000000;
+	FONT-SIZE: .83em;
+	vertical-align: bottom;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+td.HeaderHighlightCompBold
+{
+	background-color: Yellow;
+	color: #000000;
+	font-weight: bold;
+	FONT-SIZE: .92em;
+	vertical-align: bottom;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+td.NormalCell
+{
+	background-color: #FFFFFF;
+	color: #000000;
+	FONT-SIZE: .75em;
+	vertical-align: middle;
+	padding-left: 2;
+	padding-right: 2;
+}
+
+td.NormalCellEven
+{
+	background-color: #E6E6E6;
+	color: #000000;
+	FONT-SIZE: .75em;
+	vertical-align: middle;
+	padding-left: 2;
+	padding-right: 2;
+}
+
+td.NormalCellCompEven
+{
+	background-color: #E6E6E6;
+	color: #000000;
+	FONT-SIZE: .75em;
+	vertical-align: middle;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+
+.NormalClickableRow
+{
+	cursor: pointer; 
+	cursor: hand;
+	background-color: #FFFFFF;
+	color: #000000;
+	FONT-SIZE: 0.75em;
+	vertical-align: middle;
+	padding-left: 2;
+	padding-right: 2;
+}
+
+.NormalClickableRowEven
+{
+	cursor: pointer; 
+	cursor: hand;
+	background-color: #E6E6E6;
+	color: #000000;
+	FONT-SIZE: 0.75em;
+	vertical-align: middle;
+	padding-left: 2;
+	padding-right: 2;
+}
+
+.NormalClickableRowHighlight
+{
+	cursor: pointer; 
+	cursor: hand;
+	background-color: #CCFFCC;
+	color: #000000;
+	FONT-SIZE: 0.75em;
+	vertical-align: middle;
+	padding-left: 2;
+	padding-right: 2;
+}
+
+
+
+.NormalRow
+{
+	background-color: #FFFFFF;
+	color: #000000;
+	FONT-SIZE: 0.75em;
+	vertical-align: middle;
+	padding-left: 2;
+	padding-right: 2;
+}
+
+.NormalRowEven
+{
+	background-color: #E6E6E6;
+	color: #000000;
+	FONT-SIZE: .75em;
+	vertical-align: middle;
+	padding-left: 2;
+	padding-right: 2;
+}
+
+.NormalRowYellow
+{
+	background-color: #FFFF00;
+	color: #000000;
+	FONT-SIZE: 0.75em;
+	vertical-align: middle;
+	padding-left: 2;
+	padding-right: 2;
+}
+
+.NormalRowYellowEven
+{
+	background-color: #F4F400;
+	color: #000000;
+	FONT-SIZE: .75em;
+	vertical-align: middle;
+	padding-left: 2;
+	padding-right: 2;
+}
+
+.NormalRowGreen
+{
+	background-color: #00CC00;
+	color: #000000;
+	FONT-SIZE: 0.75em;
+	vertical-align: middle;
+	padding-left: 2;
+	padding-right: 2;
+}
+
+.ReportNormalRow
+{
+	background-color: #FFFFFF;
+	color: #000000;
+	FONT-SIZE: .75em;
+	vertical-align: middle;
+	padding-left: 2;
+	padding-right: 2;
+}
+
+.ReportNormalRowEven
+{
+	background-color: #E6E6E6;
+	color: #000000;
+	FONT-SIZE: .75em;
+	vertical-align: middle;
+	padding-left: 2;
+	padding-right: 2;
+}
+
+.ReportNormalRowSmall
+{
+	background-color: #FFFFFF;
+	color: #000000;
+	FONT-SIZE: .65em;
+	vertical-align: middle;
+	padding-left: 2;
+	padding-right: 2;
+}
+
+.ReportNormalRowSmallEven
+{
+	background-color: #E6E6E6;
+	color: #000000;
+	FONT-SIZE: .65em;
+	vertical-align: middle;
+	padding-left: 2;
+	padding-right: 2;
+}
+
+.HighlightRow
+{
+	background-color: #CCFFCC;
+	color: #000000;
+	FONT-SIZE: .75em;
+	vertical-align: middle;
+	padding-left: 2;
+	padding-right: 2;
+}
+
+.NormalRowSpecial
+{
+	background-color: #FFFFFF;
+	color: #000000;
+	FONT-SIZE: .75em;
+	vertical-align: middle;
+	padding-left: 2;
+	padding-right: 2;
+	border-right-color: #000000;
+	border-left-color: #000000;
+}
+
+.NormalRowEvenSpecial
+{
+	background-color: #E6E6E6;
+	color: #000000;
+	FONT-SIZE: .75em;
+	vertical-align: middle;
+	padding-left: 2;
+	padding-right: 2;
+	border-right-color: #000000;
+	border-left-color: #000000;
+}
+
+.ReportNormalRowSpecial
+{
+	background-color: #FFFFFF;
+	color: #000000;
+	FONT-SIZE: .75em;
+	vertical-align: middle;
+	padding-left: 2;
+	padding-right: 2;
+	border-right-color: #000000;
+	border-left-color: #000000;
+}
+
+.ReportNormalRowEvenSpecial
+{
+	background-color: #E6E6E6;
+	color: #000000;
+	FONT-SIZE: .75em;
+	vertical-align: middle;
+	padding-left: 2;
+	padding-right: 2;
+	border-right-color: #000000;
+	border-left-color: #000000;
+}
+
+.PlainText
+{
+	color: #000000;
+	FONT-SIZE: 0.75em;
+}
+
+input.Number
+{
+	FONT-SIZE: .92em;
+	TEXT-ALIGN: right;
+}
+
+input.Date
+{
+	FONT-SIZE: .92em;
+	TEXT-ALIGN: right;
+}
+
+input.Time
+{
+	FONT-SIZE: .92em;
+	TEXT-ALIGN: right;
+}
+
+input.Text
+{
+	FONT-SIZE: .92em;
+	TEXT-ALIGN: left;
+}
+
+

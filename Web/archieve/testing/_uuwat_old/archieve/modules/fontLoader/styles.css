@@ -1,0 +1,16 @@
+#fontLdr
+{
+	border:1px solid black;
+	text-align: right;
+	position: absolute;
+	right:0px;
+	bottom:0px;
+}
+
+#fontLdr > span
+{
+	color:white;
+	font-size: 50px;
+	border:1px solid blue;
+	font-family: arial;
+}

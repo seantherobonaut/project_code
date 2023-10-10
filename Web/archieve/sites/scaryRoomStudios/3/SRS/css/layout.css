@@ -1,0 +1,52 @@
+body
+{
+	font-family: verdana;
+	background-color: black;
+	color:#ccc;
+}	
+
+#header, #main
+{
+	background: rgba(0, 0, 0, .7);
+	overflow: hidden;
+	/*
+		*Interesting fact: #navlinks doesn't need it when its children are
+		displayed as inline-block. The parent is block, but children are inline-
+		block and the overflow is still there.
+	*/
+}
+
+.partition
+{
+	padding:0px 15px;
+	margin:20px 0px;
+}
+
+#navbar, #main, #footer
+{
+	width:100%;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#main
+{
+	border-radius: 5px;
+}
+
+#copyright, #socmedia {margin: auto;text-align: center;}
+
+#copyright
+{
+	font-size: 12px;
+	color:#aaa;
+}
+
+#socmedia img
+{
+	width:25px;
+	margin:7px 5px;
+	cursor: pointer;
+	border-radius: 5px;
+}

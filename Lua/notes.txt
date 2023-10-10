@@ -1,0 +1,20 @@
+all variables are global unless specified by local
+
+Table fields - This is a special type of variable that can hold anything except nil including functions.
+
+io.write adds less whitespace to seperate variables as opposed to print()
+
+variable declaration is weird
+
+(you still can have 1 variable per line, but this is called a variable_list)  variable_list = value_list
+var1,var2 = value1,value2
+
+-- Swapping of variables
+b, a = a, b
+
+logical operators "and" "or" "not"
+
+a..b (concatinates strings a and b)
+#variable (returns the length of the string or table)
+
+do while loop is known as "repeat until" in lua

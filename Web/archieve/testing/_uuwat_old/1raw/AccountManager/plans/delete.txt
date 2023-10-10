@@ -1,0 +1,17 @@
+
+
+Delete users
+	User must be logged in to click on delete account
+	Delete email is sent to account email inbox (link: url + route + code)
+	User clicks on link.
+	Website path accepts link
+		using find matching code + type of request
+		if auth code is not too old
+			ask user to enter password and click 'delete account'
+		if it is too old, tell them the link is old, if the user even exists, or the link is expired
+
+
+//since we cannot garentee how to request proxy is setup, return -1 if no account is found
+createRequest($user_id) -> returns a request code (code) no prefix, it is up to the designer of the request proxy to include that
+
+processRequest($code) //since this method is in the delete package it is implied - return -1 if not found, -2 if code is expired

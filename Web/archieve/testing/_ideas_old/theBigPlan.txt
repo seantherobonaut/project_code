@@ -1,0 +1,35 @@
+my main issue now with css only is nested operation...what if my css module gets nested inside itself?
+	...article seen about media queries related to specific elements instead of windowsize only
+
+
+
+...central physical unlinked stylesheet
+copy css values from unlinked css file into php session variables...insert into document as blockcss in header...with proper formatting?
+
+if session is not active, have a cover, after
+
+On first load, add small delay (unhide upon delay timer or documentready) to perform adapt functions with javascript...
+then update changed values to the php session variable that holds css values (javascript functions must be at bottom of page even documentready)
+
+...when editing layout, javascript makes changes and at end of each functions ajax pushes changes to php that writes changes to the unlinked
+css file.
+
+???what about javascript copied phpvars intializing before body and executing after element without waiting for document.ready?
+
+console.time("DOMContentLoaded");
+      .append("<li>one</li>")
+      .append("<li>two</li>")
+      .append("<li>three</li>")
+      .appendTo("body");	...append directly to html? cool!
+
+
+=========================================
+anti javascript might still work....have jquery measure screen width then subtract combined element width  to figure out how far apart they can be before
+they "break" upon that break plus a margin...add a new media query...to be in edit mode, one must enable javascript
+
+forms...jquery was the plan, but server can deny too many requests, people might be able to spam requests hacking javascript anyway...server security
+video players, get height and width and make css ajustments when needed
+
+css only background image was already worked out...
+
+what is more commmon? css breaks or people who disable javascript?

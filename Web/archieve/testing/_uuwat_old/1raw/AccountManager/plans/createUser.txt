@@ -1,0 +1,13 @@
+Create users
+	Gather info in form, submit request to server
+	Check to see if account already exists
+	If not, create a new entry but with account active:no
+		If The account entry already exists, inform them to check their inbox or to resend the activation link
+			If their request is older than the max expire time of the account creation auth, automatically send new link
+	Send user email with link to activate (link: url + route + code)
+	User clicks on link
+	Website path accepts link
+		does email exist? 
+		using find matching code
+		if authcode is not too old, set user's account active:yes
+			otherwise, tell them the link is either invalid, bad user, or expired

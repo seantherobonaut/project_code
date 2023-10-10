@@ -1,0 +1,3 @@
+<?php
+    DataObject::connect('localhost', '', '', '');
+?>

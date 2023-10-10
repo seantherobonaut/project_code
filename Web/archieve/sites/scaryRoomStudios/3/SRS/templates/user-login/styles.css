@@ -1,0 +1,55 @@
+.login
+{
+	padding:7px;
+}
+
+.login *
+{
+	margin:0px;
+	padding:0px;
+	border-width: 0px;
+	font-size: 0px;
+	box-sizing: border-box;
+}
+
+.login form
+{
+	width:100%;
+	max-width: 400px;
+	margin:auto;
+
+	border:1px solid #999;
+	border-radius: 7px;
+	
+	text-align: right;
+}
+.login > form > div
+{
+	margin:7px;
+}
+
+.login input
+{
+	border:1px solid #444;
+	padding:2px 4px;
+	font-size:14px;
+	border-radius: 5px;
+	margin-bottom:10px;
+}
+
+.login input:nth-last-child(1)
+{
+	margin-bottom:0px;
+}
+
+.login p
+{
+	margin-bottom:10px;
+	font-size: 13px;
+	color:white;
+}
+
+.login input[type="text"], .login input[type="password"]
+{
+	width:100%;
+}

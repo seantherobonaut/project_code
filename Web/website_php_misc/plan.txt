@@ -1,0 +1,175 @@
+work on "login"
+
+Turn about me into "life". This will have subsections of professional, gaming, family, etc... 
+Each one will have pictures, and articles. Have text stack beside pictures, or several. Once screen gets small they stack verticall. 
+Pictures will float left and right alternatively
+
+Apply "active" class to navlinks
+
+Make profile picture "pop out" when clicked on
+
+Make resume a PDF download than a realtime document (if i change it while people are viewing that gets weird)
+
+Gallery:
+Have categories and display pictures like on the robotics website
+
+Layout:
+Add small links to the bottom such as how the website was made, other important information, maybe some joke links... "sponsors" pshhhh you think I get sponsors? OMEGA LOL!
+
+Add some funny Sean flare to the website
+
+Pages:
+FIRST
+
+do more with footer links
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+####################################################
+
+State goals in education
+interests
+
+Categories:
+History
+FIRST
+Hobbies
+Personal Life
+Current Goals
+
+History
+
+Interests
+
+What I’m doing today
+
+I love cats and dogs and had both
+
+Mention tech team!!
+Mention robotics!
+Technologies I’ve experimented with…
+My name is on MARS!!!
+
+I’m working on a drone
+I work on various coding projects, you can find links to my github down below. 
+Yes I play games, and read books
+I love biking(sierra metric centry), hiking, archery, running, reading, creative writing
+I still play with legos
+
+#####################################################################
+
+    
+    //LEARN php headers header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found", true, 404)
+    //LEARN http responses http_response_code(404)
+
+    //TODO prevent any output with the output buffer... actualy does output buffer flush if there's an error anyway?
+
+    //NOTE outputting php plain text before the header (doctype and document stuff) creates a lag. Don't output unless inside html. 
+    
+
+
+#####################################################################
+Front page: 
+Maybe a circular area of a few icons "Post categories" (maybe use the tag cloud here)
+   Everything
+   Goofy
+   Games
+   Dank Memes
+   Life
+Posts:
+Eventually have each post limited and linkt to a full page
+Post format:
+text - width(full, fixed, percent) align(left,right,middle)
+picture (
+
+
+News items - or just ramblings, or just the about me page
+   Funny Content (memes, videos)
+List of inspirational quotes
+
+Projects
+   Previous websites
+   GitHub Projects
+
+About Me
+   My Passions
+   My history
+   (include pictures with subtext)
+   Maybe add a timeline?
+
+Personal Gallery
+   Have categories (robotics, hikes, holidays, animals, important moments in my life) all pictures have text, date, location
+
+Resume - Clean this up
+
+Dank Memes page
+Gamer page
+
+Bottom:
+
+Facebook
+Youtube
+Github
+LinkedIn
+Steam
+Discord
+
+Contact - list this at the bottom along with social media icons
+
+Design:
+Setup a basic nav and design, then expand
+Design should reflect me, me naturally (show that I'm goofy and professional)... maybe have a setting
+The website doesn't need to look identical across browsers, it needs to just look good
+
+Maybe a popup pic with a caption?
+
+My face, a quote OF THE DAY on side or stack vertically
+ === Navigation ===
+
+"Hey! This is me! What are you here for?" What do you want out of life...
+
+Make content short and sweet, if they want more, they can go find it
+
+When someone first lands on your website, what do you want their reaction to be?
+In awe, curious, NOT overwhelmed
+
+What do we want for navigation?
+How is navigation going to work?
+
+
+
+
+
+
+Guides:
+
+Resume = Sumary of your professional life
+Portfolio = Sumary supported by examples of your projects….
+
+Best Practices for Resume Websites
+Code your resume so it can be crawled by search engines.
+Offer a button to download your resume in PDF so the hiring manager can add it to your file.
+Keep branding consistent between the website and document versions: Use similar fonts, colors, and images so you're easy to recognize.
+Be creative and authentic to yourself. Think about the colors, images, and media you want to be a part of your story that you couldn't include in a document resume.
+
+Best Practices for Portfolio Websites
+Use mainly visuals. Even if you're showcasing your written work, using logos or other branding is more eye-catching for your visitors.
+Don't be afraid to be yourself. Your personality, style, and sense of humor could be what sets you apart from other sites!
+Organization is key. If your portfolio is full of photos, logos, and other images, make sure it's easy for visitors to navigate to where they can contact you.
+Brand yourself. Choose a logo or icon to make your information easily identifiable.

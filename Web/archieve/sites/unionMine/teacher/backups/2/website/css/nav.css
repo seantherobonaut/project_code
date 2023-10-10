@@ -1,0 +1,90 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+ol, ul { list-style: none; }
+
+
+#w
+	{ 
+		display: block;
+		 width: 100%;
+		 margin: 0%, 0%, 0%, 10%;
+	}
+
+#navigation
+	{ 
+		  display: block; 
+		  width: 100%; 
+		  height:100%;
+		  min-width:100%;
+		  margin: auto; 
+		  -webkit-box-shadow: 3px 2px 3px rgba(0,0,0,0.7);
+		  -moz-box-shadow: 3px 2px 3px rgba(0,0,0,0.7);
+		  box-shadow: 3px 2px 3px rgba(0,0,0,0.7);
+	}
+
+#navigation li 
+	{ 
+	
+	}
+
+#navigation > li > a
+	{ 
+		display: block; 
+		padding: 16px 18px;
+		font-size: 15px;
+		font-family: Verdana, sans-serif;
+		color: #d4d4d4;/* Text color of main topic*/
+		text-decoration: none;
+		border-bottom: 1px solid #212121;
+		background-color: #343434;
+		background: -webkit-gradient(linear, left top, left bottom, from(#343434), to(#292929));/* Colors in the gradient used on the main topic*/
+		background: -webkit-linear-gradient(top, #343434, #292929);
+		background: -moz-linear-gradient(top, #343434, #292929);
+		background: -ms-linear-gradient(top, #343434, #292929);
+		background: -o-linear-gradient(top, #343434, #292929);
+		background: linear-gradient(top, #343434, #292929);
+	}
+#navigation > li > a:hover, #navigation > li > a.open
+	{ 
+		color: #e9e9e9;/* Text color of main topic on mouse over*/
+		border-bottom-color: #384f76;
+		background-color: #020246;
+		background: -webkit-gradient(linear, left top, left bottom, from(#020246), to(#456397));/* Colors in the gradient used when you mouse over a main topic*/
+		background: -webkit-linear-gradient(top, #020246, #456397);
+		background: -moz-linear-gradient(top, #020246, #456397);
+		background: -ms-linear-gradient(top, #020246, #456397);
+		background: -o-linear-gradient(top, #020246, #456397);
+		background: linear-gradient(top, #020246, #456397);
+	}
+
+#navigation li ul 
+	{ 
+		display: none;
+		background: #456397;
+	}
+
+#navigation li ul li a
+	{ 
+		display: block; 
+		background: none;
+		padding: 10px 0px;
+		padding-left: 30px;
+		font-size: 15px;
+		text-decoration: none;
+		font-family: Verdana, sans-serif;
+		color: #e3e7f1; /* Text color of drop down*/
+		text-shadow: 1px 1px 0px #000;
+	}
+	
+#navigation li ul li a:hover
+	{
+		background: #440000;
+	}
+	
+	660000 red
+	000033 blue
+	440000 dark red

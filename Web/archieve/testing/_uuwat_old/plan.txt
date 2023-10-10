@@ -1,0 +1,73 @@
+ABSOULTELY NO IMPROVEMENT ON TEMPALTE DESIGN UNTIL BASIC WEBSITE IS COMPLETED!!! SAME WITH ALL OTHER IMPROVEMENTS.
+YOU CAN'T IMPROVE ON SOMETHING THAT DOESN'T EXIST YET!!!
+Manually work with tempaltes. 
+NOthing on the website will be changeable other than the data. All template files are manually created.
+You may use get parameters to modify page content
+_________________________________________________
+
+	when logged in, have an admin bar, with an option to turn off and on edit mode
+	when on user can hover on any item that seems like it is editable and it will highlight or change cursor
+		or...use can toggle edit highlight mode
+	
+
+	//BUG bad TemplateRegisters do not generate log outside of UUWAT
+
+	/*url table
+paragraph table
+heading table*/
+	//TODO enforce a new template naming scheme. Each template folder must contain a file.php that matches its name
+	//TODO setup a small database table that uses the $_GET["page"] to find pages and return the filename
+	//TODO
+	/*
+		searchstring 
+
+		update .htaccess
+		update FileSearchClass
+
+		Make sure all filenames of base are turned to Base
+
+		lastLocation needs to have the second L capitalized
+
+		Make a find&replace for files
+		eventually replace all require_once with class_exist and then require...start putting multiple classes in one file
+		Improve efficiency more by using a $_GLOBALS array. Directly calling an array rather than a class and function each time a file loads 
+		should be more effient(long term)
+
+		Make it so when you change the appPATH you only have to change it in one location
+
+	*/
+
+_________________________________________________
+
+You must still use class files with html snippets to encapsulate data.
+Sometimes use require with class_exist()
+	
+permissons?
+universal datatable?
+
+for javascript, have one windowresize event handler that will run everythin inside an array that has been attached so there are no window resize conflicts
+
+wrap all output handlers inside real full HTML dom
+
+make buttons on the handlerOutput pages and practice some ajax
+
+Compat error
+
+Readme
+you need .htaccess with /crash, /login, /logout, main "RewriteRule    ^([A-Za-z0-9-]+)/?$    index.php?page=$1    [NC,L]"
+you must setup your own login/logout stuffs
+you need config with rootPATH, UUWAT, appPATH, dbCONN, crashHANDLER
+git ignore login-details
+
+________________________________________________________________________
+make big change with the breaker divs... class (breakEvent func:stack)
+
+the logo to shrink when it is too small...and make sure the right does not need to be posisiton absolute
+
+bring him over and discuss mobile menu...panel come in from the side...or links just drop down like on brandons?(mentioned they need background covering)
+
+GET FINISHED WITH FRONT END!!!
+	Make the admin page...simple form login...style it
+
+	make copyright...and discuss if look is ok
+	discuss with him the copyright look and clarify what i

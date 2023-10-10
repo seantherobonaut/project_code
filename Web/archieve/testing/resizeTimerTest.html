@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Timer Test</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<style type="text/css">
+			#display
+			{
+				border:1px solid gray;
+				background-color: white;
+				padding:10px;
+				width:100px;
+			}
+		</style>
+	</head>
+	<body>
+
+	<div id="display">Hello world!</div>
+
+	<!-- Make the button spam the function to see if it still works. -->
+	<button onclick="startTimer();startTimer();startTimer()">Start Timer</button> 
+	<script type="text/javascript">
+		var ticks;
+		var timer;
+
+		function startTimer()
+		{
+			ticks = 0;
+			countTicks(); //The initial output
+			clearInterval(timer);
+			timer = setInterval(countTicks, 50);
+		}
+
+		function countTicks()
+		{
+			$("#display").html(ticks);
+			if(ticks >= 20)
+			{
+				clearInterval(timer);
+				ticks = 0;
+			}
+			else
+			{
+				ticks++;
+			}
+		}
+
+		$(window).on("load resize", function(){startTimer();});
+	</script>
+
+	</body>
+</html>

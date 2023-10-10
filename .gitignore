@@ -1,0 +1,7 @@
+# Guidelines
+# .name - ignore this file
+# /folder/ - ignore this folder
+# folder/* - ignore all files in that directory
+# !folder/file.txt - ignore * directory except this one file)
+node_modules/
+Web/LearningNode/3_App/db_creds.js

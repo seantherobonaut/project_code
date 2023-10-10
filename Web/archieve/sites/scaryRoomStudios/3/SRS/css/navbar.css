@@ -1,0 +1,27 @@
+#navlogo img
+{
+	border-radius: 4px;
+	border:1px solid black;
+}
+
+#navlinks
+{
+	overflow: hidden;
+	min-width: 230px;
+}
+
+#navlinks a
+{
+	text-decoration: none;
+	margin:0px 8px;
+	margin-bottom:5px;
+	display: inline-block;
+	font-size:14px;
+
+	text-shadow: none;
+	color:white;
+	border-top:1px solid white;
+	padding:11px 15px;
+
+	cursor: pointer;
+}
