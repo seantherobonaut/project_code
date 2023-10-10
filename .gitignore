@@ -5,3 +5,4 @@
 # !folder/file.txt - ignore * directory except this one file)
 node_modules/
 Web/LearningNode/3_App/db_creds.js
+.env
