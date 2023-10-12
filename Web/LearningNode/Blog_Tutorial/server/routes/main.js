@@ -1,10 +1,21 @@
-import express from 'express';
+import express from "express";
 
 const route = express.Router();
 
-route.get('', (request, response)=>
+route.get("/", (request, response)=>
 {
-    response.send('Hello world!');
+    const locals = {
+        title: "NodeJs Blog",
+        description: "Simeple Blog created with NodeJs, Express, & MongoDb."
+    };
+
+    response.render("index", {locals});
 });
+
+route.get("/about", (request, response)=>
+{
+    response.render("about");
+});
+
 
 export {route};
