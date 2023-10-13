@@ -3,6 +3,8 @@ import {Post} from "../models/Post.js";
 
 const route = express.Router();
 
+// left off video 6, 3:40 
+
 
 /* Get Home */
 
@@ -65,6 +67,32 @@ route.get("/", async (request, response)=>
 //         console.log(error);
 //     }
 // });
+
+
+//Get Post: Id
+
+route.get("/post/:id", async (request, response)=>
+{
+    try
+    {
+        //this is neat!
+        let slug = request.params.id;
+        const data = await Post.findById({ _id:slug }); 
+
+        const locals = {
+            title: data.title,
+            description: "Simeple Blog created with NodeJs, Express, & MongoDb."
+        };
+
+        response.render("post", {locals, data});
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
+});
+
+
 
 route.get("/about", (request, response)=>
 {
