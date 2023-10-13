@@ -12,13 +12,13 @@ const PostSchema = new Schema({
     createdAt: {
         type: Date,
         default: Date.now
-    },
+    }, 
     updatedAt: {
         type: Date,
         default: Date.now
     }
 });
 
-const PostModel = mongoose.model('Post', PostSchema);
+const Post = mongoose.model('Post', PostSchema);
 
-export {PostModel};
+export {Post};
