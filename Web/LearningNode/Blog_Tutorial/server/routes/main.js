@@ -3,20 +3,22 @@ import {Post} from "../models/Post.js";
 
 const route = express.Router();
 
-// left off video 6, 3:40 
+// left off video 6, 8:36
 
-
-/* Get Home */
 
 // // insert some data into the database
 // const insertPostData = ()=>
 // {
-//     Post.insertMany([{
-//         title: "Building a blog",
-//         body: "This is the body text"
-//     }]);
-// };
-
+    //     Post.insertMany([{
+        //         title: "Building a blog",
+        //         body: "This is the body text"
+        //     }]);
+        // };
+        
+/**
+ * GET /
+ * Page - Home
+ */
 route.get("/", async (request, response)=>
 {
     try
@@ -69,8 +71,10 @@ route.get("/", async (request, response)=>
 // });
 
 
-//Get Post: Id
-
+/**
+ * GET /
+ * Post - id
+ */
 route.get("/post/:id", async (request, response)=>
 {
     try
@@ -92,7 +96,30 @@ route.get("/post/:id", async (request, response)=>
     }
 });
 
+/**
+ * POST /
+ * Post - searchTerm
+ */
+route.post("/search", async (request, response)=>
+{
+    try
+    {
+        const locals = {
+            title: "Search",
+            description: "Simeple Blog created with NodeJs, Express, & MongoDb."
+        };
 
+        //LEFT OFF HERE
+        let searchTerm = request.body.searchTerm;
+
+        const data = await Post.find(); 
+        response.render("search", {locals, data});
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
+});
 
 route.get("/about", (request, response)=>
 {
