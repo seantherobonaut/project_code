@@ -3,6 +3,7 @@ import express from 'express';
 import expressLayout from 'express-ejs-layouts';
 
 import {route as main_routes} from './server/routes/main.js';
+import {route as admin_routes} from './server/routes/admin.js';
 import {connectDB} from './server/config/db.js';
 
 dotenv.config();
@@ -31,6 +32,7 @@ app.set('view engine', 'ejs');
 
 //Routes
 app.use('/', main_routes);
+app.use('/', admin_routes);
 
 app.listen(PORT, ()=>
 {
