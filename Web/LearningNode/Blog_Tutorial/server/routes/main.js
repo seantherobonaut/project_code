@@ -112,7 +112,8 @@ route.post("/search", async (request, response)=>
         //LEFT OFF HERE
         let searchTerm = request.body.searchTerm;
 
-        const data = await Post.find(); 
+        
+        // const data = await Post.find(); 
         response.render("search", {locals, data});
     }
     catch(error)
