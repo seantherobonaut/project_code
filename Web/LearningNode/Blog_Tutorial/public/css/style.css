@@ -298,8 +298,8 @@ img
 /* SearchBar */
 .searchBar
 {
-    /* visibility: hidden;
-    transform: translateY(-100px); */
+    visibility: hidden;
+    transform: translateY(-100px);
     background-color: var(--black);
     padding:4px 0px;
     position: absolute;
@@ -326,6 +326,7 @@ img
     right:0px;
     color:var(--gray-light);
     padding:15px;
+    cursor: pointer;
 }
 
 /* Dashboard Admin */
@@ -365,4 +366,3 @@ img
     justify-content: space-between;
     padding: 10px 0;
 }
-  

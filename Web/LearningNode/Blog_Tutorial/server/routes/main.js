@@ -3,9 +3,6 @@ import {Post} from "../models/Post.js";
 
 const route = express.Router();
 
-// left off video 6, 8:36
-
-
 // // insert some data into the database
 // const insertPostData = ()=>
 // {
@@ -109,11 +106,19 @@ route.post("/search", async (request, response)=>
             description: "Simeple Blog created with NodeJs, Express, & MongoDb."
         };
 
-        //LEFT OFF HERE
+        
         let searchTerm = request.body.searchTerm;
 
+        //cleanse the input
+        const searchNoSpecialChars = searchTerm.replace(/[^a-zA-Z0-9]/g, "");
         
-        // const data = await Post.find(); 
+        const data = await Post.find({
+            $or: [
+                {title: { $regex: new RegExp(searchNoSpecialChars, 'i')}},
+                {body: { $regex: new RegExp(searchNoSpecialChars, 'i')}}
+            ]
+        }); 
+
         response.render("search", {locals, data});
     }
     catch(error)

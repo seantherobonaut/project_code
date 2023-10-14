@@ -7,11 +7,19 @@ import {connectDB} from './server/config/db.js';
 
 dotenv.config();
 
+
+// left off video 7, start
+
+
 const app = express();
 const PORT = 3000 || process.env.PORT;
 
 //Connect to DB
 connectDB();
+
+//enables passing data to node?
+app.use(express.urlencoded({ extended:true }));
+app.use(express.json());
 
 //Static files
 app.use(express.static('public'));
