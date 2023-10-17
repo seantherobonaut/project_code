@@ -14,14 +14,20 @@ const route = express.Router();
 const adminLayout = '../views/layouts/admin.ejs';
 
 
+
+//this isn't doing the trick either
+// import cookieParser from 'cookie-parser';
+// route.use(cookieParser());
+
+
 /**
  * Put this in the routes to prevent unauthorized access to pages like dashboard
  * Check Login
  */
 const authMiddleware = (request, response, next)=>
-{
-    console.log(request.cookie.token);
-    // const token = request.cookie.token;
+{;
+    const token = request.cookies.token;
+    console.log(token);
 
     if(!token)
     {
