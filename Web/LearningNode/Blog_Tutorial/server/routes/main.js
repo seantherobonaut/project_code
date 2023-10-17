@@ -40,7 +40,8 @@ route.get("/", async (request, response)=>
             locals,
             data,
             current: page,
-            nextPage: hasNextPage ? nextPage : null
+            nextPage: hasNextPage ? nextPage : null,
+            currentRoute: '/'
         });
     }
     catch(error)
@@ -82,7 +83,8 @@ route.get("/post/:id", async (request, response)=>
 
         const locals = {
             title: data.title,
-            description: "Simeple Blog created with NodeJs, Express, & MongoDb."
+            description: "Simeple Blog created with NodeJs, Express, & MongoDb.",
+            currentRoute: `/post/${slug}`
         };
 
         response.render("post", {locals, data});
@@ -129,7 +131,9 @@ route.post("/search", async (request, response)=>
 
 route.get("/about", (request, response)=>
 {
-    response.render("about");
+    response.render("about", {
+        currentRoute: '/about'
+    });
 });
 
 export {route};

@@ -366,3 +366,9 @@ img
     justify-content: space-between;
     padding: 10px 0;
 }
+
+.btn-delete
+{
+    padding: 10px 16px;
+    background-color: var(--red);
+}

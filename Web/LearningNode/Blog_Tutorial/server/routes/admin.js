@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-import express from "express";
+import express, { response } from "express";
 import {Post} from "../models/Post.js";
 import {User} from "../models/User.js";
 import {default as bcryptjs} from "bcryptjs";
@@ -13,13 +13,6 @@ const route = express.Router();
 
 const adminLayout = '../views/layouts/admin.ejs';
 
-
-
-//this isn't doing the trick either
-// import cookieParser from 'cookie-parser';
-// route.use(cookieParser());
-
-
 /**
  * Put this in the routes to prevent unauthorized access to pages like dashboard
  * Check Login
@@ -27,11 +20,10 @@ const adminLayout = '../views/layouts/admin.ejs';
 const authMiddleware = (request, response, next)=>
 {;
     const token = request.cookies.token;
-    console.log(token);
 
     if(!token)
     {
-        return request.status(401).json({message: 'Unauthorized'});
+        return response.status(401).json({message: 'Unauthorized'});
     }
     else
     {
@@ -43,12 +35,10 @@ const authMiddleware = (request, response, next)=>
         }
         catch(error)
         {
-            return request.status(401).json({message: 'Unauthorized'});
+            return response.status(401).json({message: 'Unauthorized'});
         }
     }
 };
-
-
 
 /**
  * GET /
@@ -63,7 +53,10 @@ route.get("/admin", async (request, response)=>
             description: "Simeple Blog created with NodeJs, Express, & MongoDb."
         };
 
-        response.render("admin/index", {locals, layout: adminLayout});
+        response.render("admin/index", {
+            locals,
+            layout: adminLayout
+        });
     }
     catch(error)
     {
@@ -103,13 +96,166 @@ route.post("/admin", async (request, response)=>
 
 
 /**
- * POST /
- * Admin - Check Login
+ * GET /
+ * Admin Dashboard
  */
-// route.get("/dashboard", async (request, response)=>
 route.get("/dashboard", authMiddleware, async (request, response)=>
 {
-    response.render('admin/dashboard');
+    try
+    {
+        const data = await Post.find();
+
+        const locals = {
+            title: "Dashboard",
+            description: "Simeple Blog created with NodeJs, Express, & MongoDb."
+        };
+
+        response.render("admin/dashboard", {
+            locals,
+            data,
+            layout: adminLayout
+        });
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
+});
+
+
+/**
+ * GET /
+ * Admin - Create New Post
+ */
+route.get("/add-post", authMiddleware, async (request, response)=>
+{
+    try
+    {
+        const data = await Post.find();
+
+        const locals = {
+            title: "Add Post",
+            description: "Simeple Blog created with NodeJs, Express, & MongoDb."
+        };
+
+        response.render("admin/add-post", {
+            locals,
+            layout: adminLayout
+        });
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
+});
+
+/**
+ * POST /
+ * Admin - Create New Post
+ */
+route.post("/add-post", authMiddleware, async (request, response)=>
+{
+    try
+    {
+        try
+        {
+            const newPost = new Post({
+                title: request.body.title,
+                body: request.body.body,                                
+            });
+
+            await Post.create(newPost);
+            response.redirect('/dashboard');
+        }
+        catch(error)
+        {
+            console.log(error);
+        }
+
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
+});
+
+/**
+ * GET /
+ * Admin - Edit Post
+ */
+route.get("/edit-post/:id", authMiddleware, async (request, response)=>
+{
+    try
+    {
+        const data = await Post.findOne({ _id: request.params.id });
+
+        const locals = {
+            title: "Edit Post",
+            description: "Simeple Blog created with NodeJs, Express, & MongoDb."
+        };
+
+         response.render('admin/edit-post', {
+            locals,
+            data,
+            layout: adminLayout
+         });
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
+});
+
+/**
+ * PUT /
+ * Admin - Edit Post
+ */
+route.put("/edit-post/:id", authMiddleware, async (request, response)=>
+{
+    try
+    {
+        await Post.findByIdAndUpdate(request.params.id,{
+            title: request.body.title,
+            body: request.body.body,
+            updatedAt: Date.now()
+        });
+
+        response.redirect(`/edit-post/${request.params.id}`);
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
+});
+
+
+/**
+ * DELETE /
+ * Admin - Delete Post
+ */
+route.delete("/delete-post/:id", authMiddleware, async (request, response)=>
+{
+    try
+    {
+        await Post.deleteOne({ _id: request.params.id });
+
+        response.redirect('/dashboard');
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
+});
+
+/**
+ * GET /
+ * Admin - Logout
+ */
+route.get("/logout", (request, response)=>
+{
+    response.clearCookie('token');
+    // response.json({message: 'Logout Successful'});
+    response.redirect('/');
 });
 
 // backup of admin login post
