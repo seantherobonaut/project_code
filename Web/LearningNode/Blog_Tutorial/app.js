@@ -1,4 +1,6 @@
 import dotenv from 'dotenv';
+dotenv.config();
+
 import express from 'express';
 import expressLayout from 'express-ejs-layouts';
 import cookieParser from 'cookie-parser';
@@ -10,7 +12,6 @@ import {connectDB} from './server/config/db.js';
 import session from 'express-session';
 
 
-dotenv.config();
 
 
 // left off video 7, start

@@ -1,7 +1,9 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import express from "express";
 import {Post} from "../models/Post.js";
 import {User} from "../models/User.js";
-
 import {default as bcryptjs} from "bcryptjs";
 import {default as jwt} from "jsonwebtoken";
 
@@ -10,6 +12,37 @@ const jwtSecret = process.env.JWT_SECRET;
 const route = express.Router();
 
 const adminLayout = '../views/layouts/admin.ejs';
+
+
+/**
+ * Put this in the routes to prevent unauthorized access to pages like dashboard
+ * Check Login
+ */
+const authMiddleware = (request, response, next)=>
+{
+    console.log(request.cookie.token);
+    // const token = request.cookie.token;
+
+    if(!token)
+    {
+        return request.status(401).json({message: 'Unauthorized'});
+    }
+    else
+    {
+        try
+        {
+            const decoded = jwt.verify(token, jwtSecret);
+            request.userId = decoded.userId;
+            next();
+        }
+        catch(error)
+        {
+            return request.status(401).json({message: 'Unauthorized'});
+        }
+    }
+};
+
+
 
 /**
  * GET /
@@ -67,7 +100,8 @@ route.post("/admin", async (request, response)=>
  * POST /
  * Admin - Check Login
  */
-route.get("/dashboard", async (request, response)=>
+// route.get("/dashboard", async (request, response)=>
+route.get("/dashboard", authMiddleware, async (request, response)=>
 {
     response.render('admin/dashboard');
 });
