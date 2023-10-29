@@ -16,21 +16,61 @@
 //     }
 // });
 
-const getSomething = ()=>
+
+const getTodos = (callback) => 
 {
-    //either returns success or reject .then() or .catch()
-    return new Promise((resolve, reject)=>
+    const request = new XMLHttpRequest();
+
+    request.addEventListener('readystatechange', ()=>
     {
-        //fetch something
-        // resolve('some data');
-        reject('some error');
+        if(request.readyState === 4 && request.status === 200)
+        {
+            const data = JSON.parse(request.responseText);
+            callback(undefined, data);
+        }
+        else
+        {
+            if(request.readyState === 4)
+            {
+                callback('could not fetch data', undefined);
+            }
+        }
     });
+
+    request.open('GET', 'https://jsonplaceholder.typicode.com/todos/');
+    request.send(null);
 };
 
-getSomething().then((data)=>
+
+getTodos((error, data)=>
 {
-    console.log(data);
-}).catch((error)=>
-{
-    console.log(error);
+    console.log('callback fired');
+    if(error)
+    {
+        console.log(error);
+    }
+    else
+    {
+        console.log(data);
+    }
 });
+
+// const getSomething = ()=>
+// {
+//     //either returns success or reject .then() or .catch()
+//     return new Promise((resolve, reject)=>
+//     {
+//         //fetch something
+//         // resolve('some data');
+//         reject('some error');
+//     });
+// };
+
+// getSomething().then((data)=>
+// {
+//     console.log(data);
+// }).catch((error)=>
+// {
+//     console.log(error);
+// });
+
