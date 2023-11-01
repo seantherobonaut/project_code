@@ -37,7 +37,7 @@ const getTodos = (callback) =>
         }
     });
 
-    request.open('GET', 'https://jsonplaceholder.typicode.com/todos/');
+    request.open('GET', '/todos/file3.json');
     request.send(null);
 };
 
@@ -54,6 +54,7 @@ getTodos((error, data)=>
         console.log(data);
     }
 });
+
 
 // const getSomething = ()=>
 // {
