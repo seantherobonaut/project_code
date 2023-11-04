@@ -27,17 +27,33 @@ const getTodos = (resource) =>
     });
 };
 
-
+//basic promises
 //we don't need to pass in callbacks, instead we tack on a .then() 
+// getTodos('/todos/file1.json').then((data)=>
+// {
+//     console.log('promise resolved:', data);
+// }).catch((error)=>
+// {
+//     console.log('promise rejected: ', error);
+// });
+
+
+//chaining promises
 getTodos('/todos/file1.json').then((data)=>
 {
-    console.log('promise resolved:', data);
+    console.log('promise1 resolved:', data);
+    return getTodos('/todos/file2.json');
+}).then((data)=>
+{
+    console.log('promise2 resolved: ', data);
+    return getTodos('/todos/file3.json');
+}).then((data)=>
+{
+    console.log('promise3 resolved: ', data);
 }).catch((error)=>
 {
     console.log('promise rejected: ', error);
 });
-
-
 
 
 
