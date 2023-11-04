@@ -27,7 +27,7 @@ const getTodos = (resource) =>
     });
 };
 
-//basic promises
+// //basic promises
 //we don't need to pass in callbacks, instead we tack on a .then() 
 // getTodos('/todos/file1.json').then((data)=>
 // {
@@ -38,22 +38,22 @@ const getTodos = (resource) =>
 // });
 
 
-//chaining promises
-getTodos('/todos/file1.json').then((data)=>
-{
-    console.log('promise1 resolved:', data);
-    return getTodos('/todos/file2.json');
-}).then((data)=>
-{
-    console.log('promise2 resolved: ', data);
-    return getTodos('/todos/file3.json');
-}).then((data)=>
-{
-    console.log('promise3 resolved: ', data);
-}).catch((error)=>
-{
-    console.log('promise rejected: ', error);
-});
+// //chaining promises
+// getTodos('/todos/file1.json').then((data)=>
+// {
+//     console.log('promise1 resolved:', data);
+//     return getTodos('/todos/file2.json');
+// }).then((data)=>
+// {
+//     console.log('promise2 resolved: ', data);
+//     return getTodos('/todos/file3.json');
+// }).then((data)=>
+// {
+//     console.log('promise3 resolved: ', data);
+// }).catch((error)=>
+// {
+//     console.log('promise rejected: ', error);
+// });
 
 
 
@@ -125,7 +125,21 @@ getTodos('/todos/file1.json').then((data)=>
 
 
 
+//promises are only rejected if we are offline or get a network error, not just 404
+fetch('/todos/file1.json').then((response)=>
+{
+    console.log('resolved', response);
+    return response.json();
+}).then((data)=>
+{
+    console.log(data);
+})
+.catch((error)=>
+{
+    console.log('rejected', error);
+});
 
+// //early example
 // fetch('https://jsonplaceholder.typicode.com/todos').then(response => response.json()).then((json) =>
 // {
 //     const element = document.getElementById("target");
