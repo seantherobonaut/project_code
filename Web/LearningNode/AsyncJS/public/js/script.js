@@ -1,3 +1,49 @@
+
+/* Promises */
+const getTodos = (resource) => 
+{
+    return new Promise((resolve, reject)=>
+    {
+        const request = new XMLHttpRequest();
+
+        request.addEventListener('readystatechange', ()=>
+        {
+            if(request.readyState === 4 && request.status === 200)
+            {
+                const data = JSON.parse(request.responseText);
+                resolve(data);
+            }
+            else
+            {
+                if(request.readyState === 4)
+                {
+                    reject('error getting resource');
+                }
+            }
+        });
+    
+        request.open('GET', resource);
+        request.send(null);
+    });
+};
+
+
+//we don't need to pass in callbacks, instead we tack on a .then() 
+getTodos('/todos/file1.json').then((data)=>
+{
+    console.log('promise resolved:', data);
+}).catch((error)=>
+{
+    console.log('promise rejected: ', error);
+});
+
+
+
+
+
+
+
+/* Basic example callbacks */
 // const getTodos = (resource, callback) => 
 // {
 //     const request = new XMLHttpRequest();
@@ -22,7 +68,7 @@
 //     request.send(null);
 // };
 
-// //Callback Hell, do NOT do this!
+/* Callback Hell, do NOT do this! */
 // getTodos('/todos/file1.json', (error, data)=>{
 //     console.log(data);
 //     getTodos('/todos/file2.json', (error, data)=>{
@@ -41,25 +87,28 @@
 
 
 
+//??
+// const getSomething = ()=>
+// {
+//     //either returns success or reject .then() or .catch()
+//     return new Promise((resolve, reject)=>
+//     {
+//         //fetch something
+//         // resolve('some data');
+//         reject('some error');
+//     });
+// };
 
-const getSomething = ()=>
-{
-    //either returns success or reject .then() or .catch()
-    return new Promise((resolve, reject)=>
-    {
-        //fetch something
-        // resolve('some data');
-        reject('some error');
-    });
-};
+// getSomething().then((data)=>
+// {
+//     console.log(data);
+// }).catch((error)=>
+// {
+//     console.log(error);
+// });
 
-getSomething().then((data)=>
-{
-    console.log(data);
-}).catch((error)=>
-{
-    console.log(error);
-});
+
+
 
 // fetch('https://jsonplaceholder.typicode.com/todos').then(response => response.json()).then((json) =>
 // {
