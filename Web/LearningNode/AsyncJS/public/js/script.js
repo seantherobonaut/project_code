@@ -1,64 +1,3 @@
-
-/* Promises */
-const getTodos = (resource) => 
-{
-    return new Promise((resolve, reject)=>
-    {
-        const request = new XMLHttpRequest();
-
-        request.addEventListener('readystatechange', ()=>
-        {
-            if(request.readyState === 4 && request.status === 200)
-            {
-                const data = JSON.parse(request.responseText);
-                resolve(data);
-            }
-            else
-            {
-                if(request.readyState === 4)
-                {
-                    reject('error getting resource');
-                }
-            }
-        });
-    
-        request.open('GET', resource);
-        request.send(null);
-    });
-};
-
-// //basic promises
-//we don't need to pass in callbacks, instead we tack on a .then() 
-// getTodos('/todos/file1.json').then((data)=>
-// {
-//     console.log('promise resolved:', data);
-// }).catch((error)=>
-// {
-//     console.log('promise rejected: ', error);
-// });
-
-
-// //chaining promises
-// getTodos('/todos/file1.json').then((data)=>
-// {
-//     console.log('promise1 resolved:', data);
-//     return getTodos('/todos/file2.json');
-// }).then((data)=>
-// {
-//     console.log('promise2 resolved: ', data);
-//     return getTodos('/todos/file3.json');
-// }).then((data)=>
-// {
-//     console.log('promise3 resolved: ', data);
-// }).catch((error)=>
-// {
-//     console.log('promise rejected: ', error);
-// });
-
-
-
-
-
 /* Basic example callbacks */
 // const getTodos = (resource, callback) => 
 // {
@@ -97,6 +36,69 @@ const getTodos = (resource) =>
 
 
 
+
+// /* Promises */ //(primary source for tests below)
+// const getTodos = (resource) => 
+// {
+//     return new Promise((resolve, reject)=>
+//     {
+//         const request = new XMLHttpRequest();
+
+//         request.addEventListener('readystatechange', ()=>
+//         {
+//             if(request.readyState === 4 && request.status === 200)
+//             {
+//                 const data = JSON.parse(request.responseText);
+//                 resolve(data);
+//             }
+//             else
+//             {
+//                 if(request.readyState === 4)
+//                 {
+//                     reject('error getting resource');
+//                 }
+//             }
+//         });
+    
+//         request.open('GET', resource);
+//         request.send(null);
+//     });
+// };
+
+// //Basic promises
+//we don't need to pass in callbacks, instead we tack on a .then() 
+// getTodos('/todos/file1.json').then((data)=>
+// {
+//     console.log('promise resolved:', data);
+// }).catch((error)=>
+// {
+//     console.log('promise rejected: ', error);
+// });
+
+
+// //Chaining promises
+// getTodos('/todos/file1.json').then((data)=>
+// {
+//     console.log('promise1 resolved:', data);
+//     return getTodos('/todos/file2.json');
+// }).then((data)=>
+// {
+//     console.log('promise2 resolved: ', data);
+//     return getTodos('/todos/file3.json');
+// }).then((data)=>
+// {
+//     console.log('promise3 resolved: ', data);
+// }).catch((error)=>
+// {
+//     console.log('promise rejected: ', error);
+// });
+
+
+
+
+
+
+
 //the data we pass to the resolve function is then returned and passed to the callback function in the .then() function
 
 
@@ -124,20 +126,20 @@ const getTodos = (resource) =>
 // });
 
 
-
+//Fetch API
 //promises are only rejected if we are offline or get a network error, not just 404
-fetch('/todos/file1.json').then((response)=>
-{
-    console.log('resolved', response);
-    return response.json();
-}).then((data)=>
-{
-    console.log(data);
-})
-.catch((error)=>
-{
-    console.log('rejected', error);
-});
+// fetch('/todos/file1.json').then((response)=>
+// {
+//     console.log('resolved', response);
+//     return response.json();
+// }).then((data)=>
+// {
+//     console.log(data);
+// })
+// .catch((error)=>
+// {
+//     console.log('rejected', error);
+// });
 
 // //early example
 // fetch('https://jsonplaceholder.typicode.com/todos').then(response => response.json()).then((json) =>
@@ -157,3 +159,32 @@ fetch('/todos/file1.json').then((response)=>
 //         element.innerHTML += jsonstring+'<br>]';
 //     }
 // });
+
+
+/* Async & Await */
+const getTodos = async ()=>
+{
+    //the await keyword stops javascript from assigning a value to response until the promise has resolved
+    //this is not blocking code, we are adding this inside an async function
+    const response = await fetch('/todos/file1.json');
+
+    //the json object also returns a promise, so we can chain await
+    const data = await response.json();
+
+    //this is much cleaner than chaining promises, each line with an await keyword waits for it to finish before proceeding sequentially
+    return data;
+};
+
+/* Even though we wanted to stop using .then() and just use await... we still have to use .then() outside of async functions */
+
+//proof of nonblocking code
+console.log(1);
+console.log(2);
+
+getTodos().then((data)=>
+{
+    console.log('resolved: ', data);
+});
+
+console.log(3);
+console.log(4);
