@@ -168,6 +168,12 @@ const getTodos = async ()=>
     //this is not blocking code, we are adding this inside an async function
     const response = await fetch('/todos/file1.json');
 
+    //missing file doesn't reject so we have to check manually
+    if(response.status !== 200)
+    {
+        throw new Error('cannot fetch data');
+    }
+
     //the json object also returns a promise, so we can chain await
     const data = await response.json();
 
@@ -184,6 +190,9 @@ console.log(2);
 getTodos().then((data)=>
 {
     console.log('resolved: ', data);
+}).catch((error)=>
+{
+    console.log('rejected: ', error.message);
 });
 
 console.log(3);
