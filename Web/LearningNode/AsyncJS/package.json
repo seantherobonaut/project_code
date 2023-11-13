@@ -1,0 +1,15 @@
+{
+  "name": "asyncjs",
+  "version": "1.0.0",
+  "description": "asyncjs test",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sean Leapley",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
