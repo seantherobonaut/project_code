@@ -101,6 +101,8 @@ route.get("/post/:id", async (request, response)=>
  */
 route.post("/search", async (request, response)=>
 {
+    console.log("something ran");
+
     try
     {
         const locals = {

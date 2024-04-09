@@ -52,6 +52,7 @@ app.use(expressLayout);
 app.set('layout', './layouts/main');
 app.set('view engine', 'ejs');
 
+//what is this for?
 app.locals.isActiveRoute = isActiveRoute;
 
 //Routes

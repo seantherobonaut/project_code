@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { response } from 'express';
 const app = express();
 const PORT = 3000;
 
@@ -23,6 +23,12 @@ app.get('/', (request, response)=>
     // response.sendFile(path.join(__dirname, '/index.html'));
     // response.sendFile('chat.html', { root: path.join(__dirname, 'public/') });
 });
+
+app.get('/testing', (request, response)=>
+{
+    response.send("Welcome to test page!");
+});
+
 
 app.listen(PORT, ()=>
 {
