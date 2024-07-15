@@ -16,9 +16,6 @@ import session from 'express-session';
 import { isActiveRoute } from './server/helpers/routeHelpers.js';
 
 
-// left off video 7, start
-
-
 const app = express();
 const PORT = 3000 || process.env.PORT;
 
