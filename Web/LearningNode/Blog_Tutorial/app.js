@@ -1,3 +1,5 @@
+//you should be able to execute this with: "npm run dev"
+
 import dotenv from 'dotenv';
 dotenv.config();
 

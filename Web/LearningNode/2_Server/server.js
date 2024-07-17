@@ -1,9 +1,9 @@
-// import * as http from 'http';
-// import * as fs from 'fs';
-// import * as lodash from 'lodash';
-const http = require('http');
-const fs = require('fs');
-const _ = require('lodash');
+import http from 'http';
+import fs from 'fs';
+
+//cool utility library
+import lodash from 'lodash';
+let _ = lodash;
 
 const server = http.createServer((request, response)=>
 {
@@ -11,22 +11,21 @@ const server = http.createServer((request, response)=>
     const num = _.random(3,20);
     console.log(num);
 
-
+    //only one of these run...
     const greet = _.once(()=>
     {
         console.log("hello there weary traveller!");
     });
-
     greet();
     greet();
-
+    greet();
+    greet();
 
     console.log(request.url);
     console.log(request.method);
 
     response.setHeader('Content-Type', 'text/html');
     
-    // response.write('<head><link rel="stylesheet" href="#"></head>');
     // response.write('<p>Hello world!</p>');
     // response.write('<p>What\'s up?</p>');
     // response.end();
@@ -58,6 +57,7 @@ const server = http.createServer((request, response)=>
             break;
     }
 
+    //return file based on path
     fs.readFile(path, (error, data)=>
     {
         if(error)
