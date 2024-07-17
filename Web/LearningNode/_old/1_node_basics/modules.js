@@ -1,4 +1,4 @@
-import { people } from './people.js';
+import { people } from './module_people.js';
 
 console.log(people);
 

@@ -1,7 +1,10 @@
+/* Basic old way to create a server */
+
 import http from 'http';
+
+//es6 way to create __filename and __dirname
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -19,17 +22,6 @@ server.listen(port, hostname, () =>
 {
     console.log(`Server running at http://${hostname}:${port}/`);
 });
-
-const inty = setInterval(()=>
-{
-    console.log('in the interval')
-}, 1000);
-
-setTimeout(()=>
-{
-    console.log('in the timeout');
-    clearInterval(inty);
-}, 3000);
 
 console.log(__dirname);
 console.log(__filename);
