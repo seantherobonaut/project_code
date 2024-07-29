@@ -126,13 +126,15 @@
 // });
 
 
-//Fetch API
-//promises are only rejected if we are offline or get a network error, not just 404
+// //Fetch API
+// //promises are only rejected if we are offline or get a network error, not just 404
+
+// //so this is just first telling us we got the data successfully?
 // fetch('/todos/file1.json').then((response)=>
 // {
 //     console.log('resolved', response);
 //     return response.json();
-// }).then((data)=>
+// }).then((data)=> //tell us what the data is
 // {
 //     console.log(data);
 // })
@@ -162,24 +164,24 @@
 
 
 /* Async & Await */
-const getTodos = async ()=>
-{
-    //the await keyword stops javascript from assigning a value to response until the promise has resolved
-    //this is not blocking code, we are adding this inside an async function
-    const response = await fetch('/todos/file1.json');
+// const getTodos = async ()=>
+// {
+//     //the await keyword stops javascript from assigning a value to response until the promise has resolved
+//     //this is not blocking code, we are adding this inside an async function
+//     const response = await fetch('/todos/file1.json');
 
-    //missing file doesn't reject so we have to check manually
-    if(response.status !== 200)
-    {
-        throw new Error('cannot fetch data');
-    }
+//     //missing file doesn't reject so we have to check manually
+//     if(response.status !== 200)
+//     {
+//         throw new Error('cannot fetch data');
+//     }
 
-    //the json object also returns a promise, so we can chain await
-    const data = await response.json();
+//     //the json object also returns a promise, so we can chain await
+//     const data = await response.json();
 
-    //this is much cleaner than chaining promises, each line with an await keyword waits for it to finish before proceeding sequentially
-    return data;
-};
+//     //this is much cleaner than chaining promises, each line with an await keyword waits for it to finish before proceeding sequentially
+//     return data;
+// };
 
 /* Even though we wanted to stop using .then() and just use await... we still have to use .then() outside of async functions */
 
