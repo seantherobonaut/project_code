@@ -10,9 +10,8 @@
         <script type="text/javascript" defer src="/js/script.js"></script> <!-- "defer" waits for the page to load before running scripts -->
     </head>
     <body>
-
-
-        <%- include('../partials/search.ejs') %>
+        <%- console.log(`Current Working Directory: ${process.cwd()+"\\views\\partials"}`) %>
+        <%- include('./views/partials/search.ejs') %>
         <div class="container">
             <%- include('../partials/header.ejs') %>
             <main class="main">

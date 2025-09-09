@@ -18,6 +18,8 @@ import session from 'express-session';
 import { isActiveRoute } from './server/helpers/routeHelpers.js';
 
 
+
+
 const app = express();
 const PORT = 3000 || process.env.PORT;
 
@@ -50,6 +52,7 @@ app.use(express.static('public'));
 app.use(expressLayout);
 app.set('layout', './layouts/main');
 app.set('view engine', 'ejs');
+
 
 //what is this for?
 app.locals.isActiveRoute = isActiveRoute;
