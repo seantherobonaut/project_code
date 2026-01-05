@@ -9,7 +9,6 @@ const route = express.Router();
 route.get('/', async (req, res) =>
 {
 
-
     try {
 
         const locals = {
@@ -36,8 +35,6 @@ route.get('/', async (req, res) =>
             current: page,
             nextPage: hasNextPage ? nextPage : null
         });
-
-
 
     } catch (error) {
         console.log(error);
