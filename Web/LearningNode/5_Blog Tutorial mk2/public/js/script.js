@@ -14,9 +14,12 @@ document.addEventListener('DOMContentLoaded',function(){
         });
     });
 
-    searchClose.addEventListener('click', function(){
-        searchBar.style.visibility = 'hidden';
-        searchBar.classList.remove('open');
-        this.setAttribute('aria-expanded', 'false');
-    });
+    if(searchClose != null)
+    {
+        searchClose.addEventListener('click', function(){
+            searchBar.style.visibility = 'hidden';
+            searchBar.classList.remove('open');
+            this.setAttribute('aria-expanded', 'false');
+        });
+    }
 });

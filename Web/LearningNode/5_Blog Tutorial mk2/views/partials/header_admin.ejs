@@ -5,12 +5,13 @@
             <li><a href="/" class="">Home</a></li>
             <li><a href="/about" class="">About</a></li>
             <li><a href="/contact" class="">Contact</a></li>
+            <li><a href="/admin" class="<%= isActiveRoute('/admin', currentRoute) %>">Admin</a></li>
         </ul>
     </nav>
 
     <div class="header__button">
-        <button>
+        <a href="/logout">
             Logout
-        </button>
+        </a>
     </div>
 </header>

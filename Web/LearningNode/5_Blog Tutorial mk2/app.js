@@ -7,6 +7,10 @@ import cookieParser from 'cookie-parser';
 import MongoStore from 'connect-mongo';
 import session from 'express-session';
 
+//we shouldn't have to use this for modern browsers, why my put/delete requests not work in modern chrome?
+import methodOverride from 'method-override';
+
+
 const app = express();
 const PORT = 3000 || process.env.PORT;
 
@@ -14,12 +18,18 @@ const PORT = 3000 || process.env.PORT;
 import {connectDB} from './server/config/db.js';
 connectDB();
 
+import { isActiveRoute } from './server/helpers/routeHelpers.js';
+
 //be able to pass data middleware
 app.use(express.urlencoded({extended:true}));
 //pass data through forms
 app.use(express.json());
 
 app.use(cookieParser());
+
+app.use(methodOverride('_method'));
+
+//TODO what is this for again? and why keyboard cat?
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
@@ -38,6 +48,9 @@ app.use(expressEjsLayouts);
 app.set('layout', './layouts/main');
 app.set('view engine', 'ejs');
 
+app.locals.isActiveRoute = isActiveRoute;
+
+//TODO how does it know which route to pick?
 import {route as main_routes} from './server/routes/main.js';
 app.use('/', main_routes);
 

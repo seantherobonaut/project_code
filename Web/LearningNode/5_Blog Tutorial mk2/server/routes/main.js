@@ -5,7 +5,10 @@ import {PostModel} from "../models/Post.js";
 
 const route = express.Router();
 
-//Home
+/**
+ * GET / 
+ * Home page
+ */
 route.get('/', async (req, res) =>
 {
 
@@ -33,7 +36,8 @@ route.get('/', async (req, res) =>
             locals,
             data,
             current: page,
-            nextPage: hasNextPage ? nextPage : null
+            nextPage: hasNextPage ? nextPage : null,
+            currentRoute: '/'
         });
 
     } catch (error) {
@@ -41,23 +45,10 @@ route.get('/', async (req, res) =>
     }
 });
 
-// Copy of Home page route
-// route.get('/', async (req, res) =>
-// {
-//     const locals = {
-//         title: "NodeJs Blog",
-//         description: "Simple Blog created with NodeJs, Express & MongoDb."
-//     };
-
-//     try {
-//         const data = await PostModel.find();
-//         res.render('index', { locals, data });
-//     } catch (error) {
-//         console.log(error);
-//     }
-// });
-
-//GET posts
+/**
+ * GET / 
+ * Post :id
+ */
 route.get('/post/:id', async (req, res) =>
 {
     try {
@@ -70,16 +61,23 @@ route.get('/post/:id', async (req, res) =>
             description: "Simple Blog created with NodeJs, Express & MongoDb."
         };
 
-        res.render('post', { locals, data });
+        res.render('post', {
+            locals, 
+            data, 
+            currentRoute: `/post/${slug}`
+        });
     } catch (error) {
         console.log(error);
     }
 });
 
-//POST post search term
+/**
+ * POST /
+ * Post search terms
+ */
 route.post('/search', async (req, res) =>
-{
-    
+{    
+    //why is this a post method and not a get method?
     try {
         
         const locals = {
@@ -107,7 +105,10 @@ route.post('/search', async (req, res) =>
     }
 });
 
-//About
+/**
+ * GET /
+ * About page
+ */
 route.get('/about', (req, res) =>
 {
     const locals = {
@@ -115,10 +116,13 @@ route.get('/about', (req, res) =>
         description: "A page about me"
     };
 
-    res.render('about', { locals });
+    res.render('about', { locals, currentRoute: '/about' });
 });
 
-//Contact
+/**
+ * GET / 
+ * Contact page
+ */
 route.get('/contact', (req, res) =>
 {
     const locals = {
@@ -126,11 +130,10 @@ route.get('/contact', (req, res) =>
         description: "Contact Page"
     };
 
-    res.render('contact', { locals });
+    res.render('contact', { locals, currentRoute: '/contact' });
 });
 
 export {route};
-
 
 // How to insert data
 // function insertPostData () {

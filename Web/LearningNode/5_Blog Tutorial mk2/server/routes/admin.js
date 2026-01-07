@@ -10,12 +10,29 @@ dotenv.config();
 const adminLayout = '../views/layouts/admin';
 const jwtSecret = process.env.JWT_SECRET;
 
-//LEFT OFF
-// https://youtu.be/uCQirwe5UVg?si=rmbk2l0hNB9GU1lU&t=895
+const authMiddleware = (req, res, next) => {
+    const token = req.cookies.token;
+
+    if(!token) {
+        return res.status(401).json({message: 'Unauthorized'});
+    }
+
+    try {
+        const decoded = jwt.verify(token, jwtSecret);
+        req.userId = decoded.userId;
+        next();
+    } catch (error) {
+        res.status(401).json({message: error});
+    }
+};
+
 
 const route = express.Router();
 
-//Admin login page
+/**
+ * GET /
+ * Admin - Login page
+ */
 route.get('/admin', async (req, res) =>
 {
     
@@ -25,13 +42,17 @@ route.get('/admin', async (req, res) =>
             description: "Simple Blog created with NodeJs, Express & MongoDb."
         };
 
-        res.render('admin/index', { locals, layout: adminLayout });
+        res.render('admin/index', { locals, layout: adminLayout, currentRoute : '/admin' });
     } catch (error) {
         console.log(error);
     }
 });
 
-//Admin check login
+
+/**
+ * POST /
+ * Admin - Check login
+ */
 route.post('/admin', async (req, res) =>
 {
     try {
@@ -59,13 +80,58 @@ route.post('/admin', async (req, res) =>
     }
 });
 
-//Admin login page
-route.get('/dashboard', async (req, res) =>
+/**
+ * GET /
+ * Admin - Dashboard
+*/
+route.get('/dashboard', authMiddleware, async (req, res) =>
 {
-    res.render('admin/dashboard');
+    // !!!!!!!!(by adding the middleware argument...it makes all our pages password protected?)
+    try {
+        const locals = {
+            title: "Dashboard",
+            description: "Simple Blog created with NodeJs, Express & MongoDb."
+        };
+        
+        const data = await PostModel.find();
+        res.render('admin/dashboard', {
+            locals,
+            data,
+            layout: adminLayout
+        });
+
+    } catch (error) {
+        console.log(error);
+    }
 });
 
-//Admin user register
+/**
+ * GET /
+ * Admin - Create New Post
+ */
+route.get('/add-post', authMiddleware, async (req, res) =>
+{
+    try {
+        const locals = {
+            title: "Add Post",
+            description: "Simple Blog created with NodeJs, Express & MongoDb."
+        };
+        
+        const data = await PostModel.find();
+        res.render('admin/add-post', {
+            locals,
+            layout: adminLayout
+        });
+
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+/**
+ * POST / 
+ * Admin - User Register
+ */
 route.post('/register', async (req, res) =>
 {
     try {
@@ -82,7 +148,6 @@ route.post('/register', async (req, res) =>
             }
             res.status(500).json({message: 'Internal server error'});
         }
-
         
         // res.render('admin/index', { locals, layout: adminLayout });
     } catch (error) {
@@ -90,5 +155,105 @@ route.post('/register', async (req, res) =>
     }
 });
 
+/**
+ * POST /
+ * Admin - Create New Post
+ */
+route.post('/add-post', authMiddleware, async (req, res) =>
+{
+    try 
+    {    
+        try 
+        {
+            const newPost = new PostModel({
+                title: req.body.title,
+                body: req.body.body
+            });
+
+            await PostModel.create(newPost);
+            res.redirect('/dashboard');
+        } 
+        catch (error) 
+        {
+            console.log(error);
+        }
+    }
+    catch (error)
+    {
+        console.log(error);
+    }
+});
+
+/**
+ * GET /
+ * Admin - Edit Post
+ */
+route.get('/edit-post/:id', authMiddleware, async (req, res) =>
+{
+    try {
+
+        const data = await PostModel.findOne({ _id: req.params.id });
+
+        const locals = {
+            title: "Add Post",
+            description: "Simple Blog created with NodeJs, Express & MongoDb."
+        };
+
+        res.render('admin/edit-post', {
+            locals, 
+            data,
+            layout: adminLayout
+        });
+
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+/**
+ * PUT /
+ * Admin - Edit Post
+ */
+route.put('/edit-post/:id', authMiddleware, async (req, res) =>
+{
+    try {
+
+        await PostModel.findByIdAndUpdate(req.params.id, {
+            title: req.body.title,
+            body: req.body.body,
+            updatedAt: Date.now()
+        });
+
+        res.redirect(`/edit-post/${req.params.id}`);
+
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+/**
+ * DELETE
+ * Admin - Delete Post
+ */
+route.delete('/delete-post/:id', authMiddleware, async (req, res) =>
+{
+    try {
+        await PostModel.deleteOne({_id: req.params.id});
+        res.redirect('/dashboard');
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+/**
+ * GET
+ * Admin - Logout
+ */
+route.get('/logout', (req, res)=>
+{
+    res.clearCookie('token');
+    // res.json({message: 'Logout Successful'});
+    res.redirect('/');
+});
 
 export {route};
