@@ -97,7 +97,8 @@ route.get('/dashboard', authMiddleware, async (req, res) =>
         res.render('admin/dashboard', {
             locals,
             data,
-            layout: adminLayout
+            layout: adminLayout,
+            currentRoute : '/dashboard'
         });
 
     } catch (error) {
@@ -120,7 +121,8 @@ route.get('/add-post', authMiddleware, async (req, res) =>
         const data = await PostModel.find();
         res.render('admin/add-post', {
             locals,
-            layout: adminLayout
+            layout: adminLayout,
+            currentRoute : '/add-post'
         });
 
     } catch (error) {
@@ -202,7 +204,8 @@ route.get('/edit-post/:id', authMiddleware, async (req, res) =>
         res.render('admin/edit-post', {
             locals, 
             data,
-            layout: adminLayout
+            layout: adminLayout,
+            currentRoute : '/edit-post'
         });
 
     } catch (error) {
