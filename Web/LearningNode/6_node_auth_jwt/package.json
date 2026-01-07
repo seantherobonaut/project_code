@@ -1,0 +1,19 @@
+{
+  "name": "6_node_auth_jwt",
+  "version": "0.1.0",
+  "description": "learning how to use jwt with nodejs",
+  "license": "ISC",
+  "author": "sean leapley",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-ejs-layouts": "^2.5.1",
+    "mongoose": "^9.1.2"
+  }
+}

@@ -9,6 +9,6 @@ const blogSchema = new Schema({
 }, { timestamps:true });
 
 //model surrounds our schema and provides an interface to communicate with a database collection of that type
-const Blog = mongoose.model('Blog', blogSchema);
+const Blog = mongoose.model('Blogs', blogSchema);
 
 export {Blog};
