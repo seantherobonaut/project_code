@@ -13,7 +13,7 @@ const app = express();
 app.set('view engine', 'ejs');
 
 //connect to mongodob
-mongoose.connect(dbURI, {useNewUrlParser:true, useUnifiedTopology: true}).then((result)=>
+mongoose.connect(dbURI).then((result)=>
 {
     console.log('connected to db');
     app.listen(3000);
