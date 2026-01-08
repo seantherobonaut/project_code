@@ -1,6 +1,5 @@
-import express from "express";
-
-const route = express.Router();
+import {Router} from 'express';
+const route = Router();
 
 /**
  * GET / 
@@ -11,6 +10,10 @@ route.get('/', async (req, res) =>
     res.render('home');
 });
 
+/**
+ * GET /
+ * Smoothies page
+ */
 route.get('/smoothies', (req, res) => 
 {
     res.render('smoothies');

@@ -33,6 +33,9 @@ app.set('view engine', 'ejs');
 import {route as main_routes} from './routes/main.js';
 app.use('/', main_routes);
 
+import {route as auth_routes} from './routes/auth.js';
+app.use('/', auth_routes);
+
 app.listen(PORT, () =>
 {
     console.log(`Server is running on http://localhost:${PORT}`);
